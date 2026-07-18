@@ -1,0 +1,9 @@
+.venv/
+.env
+__pycache__/
+*.pyc
+data/nifty100.db
+.pytest_cache/
+*.egg-info/
+data/raw/*.xlsx
+data/supporting/*.xlsx

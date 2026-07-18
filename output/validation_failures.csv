@@ -1,0 +1,649 @@
+rule_id,severity,company_id,year,field,issue
+DQ-02,CRITICAL,ADANIPORTS,2013-03,company_id+year,Removed duplicate row from profitandloss (kept last occurrence)
+DQ-02,CRITICAL,ADANIPORTS,2014-03,company_id+year,Removed duplicate row from profitandloss (kept last occurrence)
+DQ-02,CRITICAL,ADANIPORTS,2015-03,company_id+year,Removed duplicate row from profitandloss (kept last occurrence)
+DQ-02,CRITICAL,ADANIPORTS,2016-03,company_id+year,Removed duplicate row from profitandloss (kept last occurrence)
+DQ-02,CRITICAL,ADANIPORTS,2017-03,company_id+year,Removed duplicate row from profitandloss (kept last occurrence)
+DQ-02,CRITICAL,ADANIPORTS,2018-03,company_id+year,Removed duplicate row from profitandloss (kept last occurrence)
+DQ-02,CRITICAL,ADANIPORTS,2019-03,company_id+year,Removed duplicate row from profitandloss (kept last occurrence)
+DQ-02,CRITICAL,ADANIPORTS,2020-03,company_id+year,Removed duplicate row from profitandloss (kept last occurrence)
+DQ-02,CRITICAL,ADANIPORTS,2021-03,company_id+year,Removed duplicate row from profitandloss (kept last occurrence)
+DQ-02,CRITICAL,ADANIPORTS,2022-03,company_id+year,Removed duplicate row from profitandloss (kept last occurrence)
+DQ-02,CRITICAL,ADANIPORTS,2023-03,company_id+year,Removed duplicate row from profitandloss (kept last occurrence)
+DQ-02,CRITICAL,ADANIPORTS,2024-03,company_id+year,Removed duplicate row from profitandloss (kept last occurrence)
+DQ-02,CRITICAL,ADANIPORTS,TTM,company_id+year,Removed duplicate row from profitandloss (kept last occurrence)
+DQ-03,CRITICAL,ULTRACEMCO,2013-03,company_id,Excluded orphan row from profitandloss — company_id not in master companies table
+DQ-03,CRITICAL,ULTRACEMCO,2014-03,company_id,Excluded orphan row from profitandloss — company_id not in master companies table
+DQ-03,CRITICAL,ULTRACEMCO,2015-03,company_id,Excluded orphan row from profitandloss — company_id not in master companies table
+DQ-03,CRITICAL,ULTRACEMCO,2016-03,company_id,Excluded orphan row from profitandloss — company_id not in master companies table
+DQ-03,CRITICAL,ULTRACEMCO,2017-03,company_id,Excluded orphan row from profitandloss — company_id not in master companies table
+DQ-03,CRITICAL,ULTRACEMCO,2018-03,company_id,Excluded orphan row from profitandloss — company_id not in master companies table
+DQ-03,CRITICAL,ULTRACEMCO,2019-03,company_id,Excluded orphan row from profitandloss — company_id not in master companies table
+DQ-03,CRITICAL,ULTRACEMCO,2020-03,company_id,Excluded orphan row from profitandloss — company_id not in master companies table
+DQ-03,CRITICAL,ULTRACEMCO,2021-03,company_id,Excluded orphan row from profitandloss — company_id not in master companies table
+DQ-03,CRITICAL,ULTRACEMCO,2022-03,company_id,Excluded orphan row from profitandloss — company_id not in master companies table
+DQ-03,CRITICAL,ULTRACEMCO,2023-03,company_id,Excluded orphan row from profitandloss — company_id not in master companies table
+DQ-03,CRITICAL,ULTRACEMCO,2024-03,company_id,Excluded orphan row from profitandloss — company_id not in master companies table
+DQ-03,CRITICAL,ULTRACEMCO,TTM,company_id,Excluded orphan row from profitandloss — company_id not in master companies table
+DQ-03,CRITICAL,UNIONBANK,2013-03,company_id,Excluded orphan row from profitandloss — company_id not in master companies table
+DQ-03,CRITICAL,UNIONBANK,2014-03,company_id,Excluded orphan row from profitandloss — company_id not in master companies table
+DQ-03,CRITICAL,UNIONBANK,2015-03,company_id,Excluded orphan row from profitandloss — company_id not in master companies table
+DQ-03,CRITICAL,UNIONBANK,2016-03,company_id,Excluded orphan row from profitandloss — company_id not in master companies table
+DQ-03,CRITICAL,UNIONBANK,2017-03,company_id,Excluded orphan row from profitandloss — company_id not in master companies table
+DQ-03,CRITICAL,UNIONBANK,2018-03,company_id,Excluded orphan row from profitandloss — company_id not in master companies table
+DQ-03,CRITICAL,UNIONBANK,2019-03,company_id,Excluded orphan row from profitandloss — company_id not in master companies table
+DQ-03,CRITICAL,UNIONBANK,2020-03,company_id,Excluded orphan row from profitandloss — company_id not in master companies table
+DQ-03,CRITICAL,UNIONBANK,2021-03,company_id,Excluded orphan row from profitandloss — company_id not in master companies table
+DQ-03,CRITICAL,UNIONBANK,2022-03,company_id,Excluded orphan row from profitandloss — company_id not in master companies table
+DQ-03,CRITICAL,UNIONBANK,2023-03,company_id,Excluded orphan row from profitandloss — company_id not in master companies table
+DQ-03,CRITICAL,UNIONBANK,2024-03,company_id,Excluded orphan row from profitandloss — company_id not in master companies table
+DQ-03,CRITICAL,UNIONBANK,TTM,company_id,Excluded orphan row from profitandloss — company_id not in master companies table
+DQ-03,CRITICAL,UNITDSPR,2013-03,company_id,Excluded orphan row from profitandloss — company_id not in master companies table
+DQ-03,CRITICAL,UNITDSPR,2014-03,company_id,Excluded orphan row from profitandloss — company_id not in master companies table
+DQ-03,CRITICAL,UNITDSPR,2015-03,company_id,Excluded orphan row from profitandloss — company_id not in master companies table
+DQ-03,CRITICAL,UNITDSPR,2016-03,company_id,Excluded orphan row from profitandloss — company_id not in master companies table
+DQ-03,CRITICAL,UNITDSPR,2017-03,company_id,Excluded orphan row from profitandloss — company_id not in master companies table
+DQ-03,CRITICAL,UNITDSPR,2018-03,company_id,Excluded orphan row from profitandloss — company_id not in master companies table
+DQ-03,CRITICAL,UNITDSPR,2019-03,company_id,Excluded orphan row from profitandloss — company_id not in master companies table
+DQ-03,CRITICAL,UNITDSPR,2020-03,company_id,Excluded orphan row from profitandloss — company_id not in master companies table
+DQ-03,CRITICAL,UNITDSPR,2021-03,company_id,Excluded orphan row from profitandloss — company_id not in master companies table
+DQ-03,CRITICAL,UNITDSPR,2022-03,company_id,Excluded orphan row from profitandloss — company_id not in master companies table
+DQ-03,CRITICAL,UNITDSPR,2023-03,company_id,Excluded orphan row from profitandloss — company_id not in master companies table
+DQ-03,CRITICAL,UNITDSPR,2024-03,company_id,Excluded orphan row from profitandloss — company_id not in master companies table
+DQ-03,CRITICAL,UNITDSPR,TTM,company_id,Excluded orphan row from profitandloss — company_id not in master companies table
+DQ-03,CRITICAL,VBL,2012-12,company_id,Excluded orphan row from profitandloss — company_id not in master companies table
+DQ-03,CRITICAL,VBL,2013-12,company_id,Excluded orphan row from profitandloss — company_id not in master companies table
+DQ-03,CRITICAL,VBL,2014-12,company_id,Excluded orphan row from profitandloss — company_id not in master companies table
+DQ-03,CRITICAL,VBL,2015-12,company_id,Excluded orphan row from profitandloss — company_id not in master companies table
+DQ-03,CRITICAL,VBL,2016-12,company_id,Excluded orphan row from profitandloss — company_id not in master companies table
+DQ-03,CRITICAL,VBL,2017-12,company_id,Excluded orphan row from profitandloss — company_id not in master companies table
+DQ-03,CRITICAL,VBL,2018-12,company_id,Excluded orphan row from profitandloss — company_id not in master companies table
+DQ-03,CRITICAL,VBL,2019-12,company_id,Excluded orphan row from profitandloss — company_id not in master companies table
+DQ-03,CRITICAL,VBL,2020-12,company_id,Excluded orphan row from profitandloss — company_id not in master companies table
+DQ-03,CRITICAL,VBL,2021-12,company_id,Excluded orphan row from profitandloss — company_id not in master companies table
+DQ-03,CRITICAL,VBL,2022-12,company_id,Excluded orphan row from profitandloss — company_id not in master companies table
+DQ-03,CRITICAL,VBL,2023-12,company_id,Excluded orphan row from profitandloss — company_id not in master companies table
+DQ-03,CRITICAL,VBL,TTM,company_id,Excluded orphan row from profitandloss — company_id not in master companies table
+DQ-03,CRITICAL,VEDL,2013-03,company_id,Excluded orphan row from profitandloss — company_id not in master companies table
+DQ-03,CRITICAL,VEDL,2014-03,company_id,Excluded orphan row from profitandloss — company_id not in master companies table
+DQ-03,CRITICAL,VEDL,2015-03,company_id,Excluded orphan row from profitandloss — company_id not in master companies table
+DQ-03,CRITICAL,VEDL,2016-03,company_id,Excluded orphan row from profitandloss — company_id not in master companies table
+DQ-03,CRITICAL,VEDL,2017-03,company_id,Excluded orphan row from profitandloss — company_id not in master companies table
+DQ-03,CRITICAL,VEDL,2018-03,company_id,Excluded orphan row from profitandloss — company_id not in master companies table
+DQ-03,CRITICAL,VEDL,2019-03,company_id,Excluded orphan row from profitandloss — company_id not in master companies table
+DQ-03,CRITICAL,VEDL,2020-03,company_id,Excluded orphan row from profitandloss — company_id not in master companies table
+DQ-03,CRITICAL,VEDL,2021-03,company_id,Excluded orphan row from profitandloss — company_id not in master companies table
+DQ-03,CRITICAL,VEDL,2022-03,company_id,Excluded orphan row from profitandloss — company_id not in master companies table
+DQ-03,CRITICAL,VEDL,2023-03,company_id,Excluded orphan row from profitandloss — company_id not in master companies table
+DQ-03,CRITICAL,VEDL,2024-03,company_id,Excluded orphan row from profitandloss — company_id not in master companies table
+DQ-03,CRITICAL,VEDL,TTM,company_id,Excluded orphan row from profitandloss — company_id not in master companies table
+DQ-03,CRITICAL,WIPRO,2013-03,company_id,Excluded orphan row from profitandloss — company_id not in master companies table
+DQ-03,CRITICAL,WIPRO,2014-03,company_id,Excluded orphan row from profitandloss — company_id not in master companies table
+DQ-03,CRITICAL,WIPRO,2015-03,company_id,Excluded orphan row from profitandloss — company_id not in master companies table
+DQ-03,CRITICAL,WIPRO,2016-03,company_id,Excluded orphan row from profitandloss — company_id not in master companies table
+DQ-03,CRITICAL,WIPRO,2017-03,company_id,Excluded orphan row from profitandloss — company_id not in master companies table
+DQ-03,CRITICAL,WIPRO,2018-03,company_id,Excluded orphan row from profitandloss — company_id not in master companies table
+DQ-03,CRITICAL,WIPRO,2019-03,company_id,Excluded orphan row from profitandloss — company_id not in master companies table
+DQ-03,CRITICAL,WIPRO,2020-03,company_id,Excluded orphan row from profitandloss — company_id not in master companies table
+DQ-03,CRITICAL,WIPRO,2021-03,company_id,Excluded orphan row from profitandloss — company_id not in master companies table
+DQ-03,CRITICAL,WIPRO,2022-03,company_id,Excluded orphan row from profitandloss — company_id not in master companies table
+DQ-03,CRITICAL,WIPRO,2023-03,company_id,Excluded orphan row from profitandloss — company_id not in master companies table
+DQ-03,CRITICAL,WIPRO,2024-03,company_id,Excluded orphan row from profitandloss — company_id not in master companies table
+DQ-03,CRITICAL,WIPRO,TTM,company_id,Excluded orphan row from profitandloss — company_id not in master companies table
+DQ-03,CRITICAL,ZOMATO,2018-03,company_id,Excluded orphan row from profitandloss — company_id not in master companies table
+DQ-03,CRITICAL,ZOMATO,2019-03,company_id,Excluded orphan row from profitandloss — company_id not in master companies table
+DQ-03,CRITICAL,ZOMATO,2020-03,company_id,Excluded orphan row from profitandloss — company_id not in master companies table
+DQ-03,CRITICAL,ZOMATO,2021-03,company_id,Excluded orphan row from profitandloss — company_id not in master companies table
+DQ-03,CRITICAL,ZOMATO,2022-03,company_id,Excluded orphan row from profitandloss — company_id not in master companies table
+DQ-03,CRITICAL,ZOMATO,2023-03,company_id,Excluded orphan row from profitandloss — company_id not in master companies table
+DQ-03,CRITICAL,ZOMATO,2024-03,company_id,Excluded orphan row from profitandloss — company_id not in master companies table
+DQ-03,CRITICAL,ZOMATO,TTM,company_id,Excluded orphan row from profitandloss — company_id not in master companies table
+DQ-03,CRITICAL,ZYDUSLIFE,2013-03,company_id,Excluded orphan row from profitandloss — company_id not in master companies table
+DQ-03,CRITICAL,ZYDUSLIFE,2014-03,company_id,Excluded orphan row from profitandloss — company_id not in master companies table
+DQ-03,CRITICAL,ZYDUSLIFE,2015-03,company_id,Excluded orphan row from profitandloss — company_id not in master companies table
+DQ-03,CRITICAL,ZYDUSLIFE,2016-03,company_id,Excluded orphan row from profitandloss — company_id not in master companies table
+DQ-03,CRITICAL,ZYDUSLIFE,2017-03,company_id,Excluded orphan row from profitandloss — company_id not in master companies table
+DQ-03,CRITICAL,ZYDUSLIFE,2018-03,company_id,Excluded orphan row from profitandloss — company_id not in master companies table
+DQ-03,CRITICAL,ZYDUSLIFE,2019-03,company_id,Excluded orphan row from profitandloss — company_id not in master companies table
+DQ-03,CRITICAL,ZYDUSLIFE,2020-03,company_id,Excluded orphan row from profitandloss — company_id not in master companies table
+DQ-03,CRITICAL,ZYDUSLIFE,2021-03,company_id,Excluded orphan row from profitandloss — company_id not in master companies table
+DQ-03,CRITICAL,ZYDUSLIFE,2022-03,company_id,Excluded orphan row from profitandloss — company_id not in master companies table
+DQ-03,CRITICAL,ZYDUSLIFE,2023-03,company_id,Excluded orphan row from profitandloss — company_id not in master companies table
+DQ-03,CRITICAL,ZYDUSLIFE,2024-03,company_id,Excluded orphan row from profitandloss — company_id not in master companies table
+DQ-03,CRITICAL,ZYDUSLIFE,TTM,company_id,Excluded orphan row from profitandloss — company_id not in master companies table
+DQ-02,CRITICAL,ASIANPAINT,2013-03,company_id+year,Removed duplicate row from balancesheet (kept last occurrence)
+DQ-02,CRITICAL,ASIANPAINT,2014-03,company_id+year,Removed duplicate row from balancesheet (kept last occurrence)
+DQ-02,CRITICAL,ASIANPAINT,2015-03,company_id+year,Removed duplicate row from balancesheet (kept last occurrence)
+DQ-02,CRITICAL,ASIANPAINT,2016-03,company_id+year,Removed duplicate row from balancesheet (kept last occurrence)
+DQ-02,CRITICAL,ASIANPAINT,2017-03,company_id+year,Removed duplicate row from balancesheet (kept last occurrence)
+DQ-02,CRITICAL,ASIANPAINT,2018-03,company_id+year,Removed duplicate row from balancesheet (kept last occurrence)
+DQ-02,CRITICAL,ASIANPAINT,2019-03,company_id+year,Removed duplicate row from balancesheet (kept last occurrence)
+DQ-02,CRITICAL,ASIANPAINT,2020-03,company_id+year,Removed duplicate row from balancesheet (kept last occurrence)
+DQ-02,CRITICAL,ASIANPAINT,2021-03,company_id+year,Removed duplicate row from balancesheet (kept last occurrence)
+DQ-02,CRITICAL,ASIANPAINT,2022-03,company_id+year,Removed duplicate row from balancesheet (kept last occurrence)
+DQ-02,CRITICAL,ASIANPAINT,2023-03,company_id+year,Removed duplicate row from balancesheet (kept last occurrence)
+DQ-02,CRITICAL,ASIANPAINT,2024-03,company_id+year,Removed duplicate row from balancesheet (kept last occurrence)
+DQ-02,CRITICAL,ASIANPAINT,2024-09,company_id+year,Removed duplicate row from balancesheet (kept last occurrence)
+DQ-02,CRITICAL,PNB,2013-03,company_id+year,Removed duplicate row from balancesheet (kept last occurrence)
+DQ-02,CRITICAL,PNB,2014-03,company_id+year,Removed duplicate row from balancesheet (kept last occurrence)
+DQ-02,CRITICAL,PNB,2015-03,company_id+year,Removed duplicate row from balancesheet (kept last occurrence)
+DQ-02,CRITICAL,PNB,2016-03,company_id+year,Removed duplicate row from balancesheet (kept last occurrence)
+DQ-02,CRITICAL,PNB,2017-03,company_id+year,Removed duplicate row from balancesheet (kept last occurrence)
+DQ-02,CRITICAL,PNB,2018-03,company_id+year,Removed duplicate row from balancesheet (kept last occurrence)
+DQ-02,CRITICAL,PNB,2019-03,company_id+year,Removed duplicate row from balancesheet (kept last occurrence)
+DQ-02,CRITICAL,PNB,2020-03,company_id+year,Removed duplicate row from balancesheet (kept last occurrence)
+DQ-02,CRITICAL,PNB,2021-03,company_id+year,Removed duplicate row from balancesheet (kept last occurrence)
+DQ-02,CRITICAL,PNB,2022-03,company_id+year,Removed duplicate row from balancesheet (kept last occurrence)
+DQ-02,CRITICAL,PNB,2023-03,company_id+year,Removed duplicate row from balancesheet (kept last occurrence)
+DQ-02,CRITICAL,PNB,2024-03,company_id+year,Removed duplicate row from balancesheet (kept last occurrence)
+DQ-02,CRITICAL,PNB,2013-03,company_id+year,Removed duplicate row from balancesheet (kept last occurrence)
+DQ-02,CRITICAL,PNB,2014-03,company_id+year,Removed duplicate row from balancesheet (kept last occurrence)
+DQ-02,CRITICAL,PNB,2015-03,company_id+year,Removed duplicate row from balancesheet (kept last occurrence)
+DQ-02,CRITICAL,PNB,2016-03,company_id+year,Removed duplicate row from balancesheet (kept last occurrence)
+DQ-02,CRITICAL,PNB,2017-03,company_id+year,Removed duplicate row from balancesheet (kept last occurrence)
+DQ-02,CRITICAL,PNB,2018-03,company_id+year,Removed duplicate row from balancesheet (kept last occurrence)
+DQ-02,CRITICAL,PNB,2019-03,company_id+year,Removed duplicate row from balancesheet (kept last occurrence)
+DQ-02,CRITICAL,PNB,2020-03,company_id+year,Removed duplicate row from balancesheet (kept last occurrence)
+DQ-02,CRITICAL,PNB,2021-03,company_id+year,Removed duplicate row from balancesheet (kept last occurrence)
+DQ-02,CRITICAL,PNB,2022-03,company_id+year,Removed duplicate row from balancesheet (kept last occurrence)
+DQ-02,CRITICAL,PNB,2023-03,company_id+year,Removed duplicate row from balancesheet (kept last occurrence)
+DQ-02,CRITICAL,PNB,2024-03,company_id+year,Removed duplicate row from balancesheet (kept last occurrence)
+DQ-02,CRITICAL,PNB,2013-03,company_id+year,Removed duplicate row from balancesheet (kept last occurrence)
+DQ-02,CRITICAL,PNB,2014-03,company_id+year,Removed duplicate row from balancesheet (kept last occurrence)
+DQ-02,CRITICAL,PNB,2015-03,company_id+year,Removed duplicate row from balancesheet (kept last occurrence)
+DQ-02,CRITICAL,PNB,2016-03,company_id+year,Removed duplicate row from balancesheet (kept last occurrence)
+DQ-02,CRITICAL,PNB,2017-03,company_id+year,Removed duplicate row from balancesheet (kept last occurrence)
+DQ-02,CRITICAL,PNB,2018-03,company_id+year,Removed duplicate row from balancesheet (kept last occurrence)
+DQ-02,CRITICAL,PNB,2019-03,company_id+year,Removed duplicate row from balancesheet (kept last occurrence)
+DQ-02,CRITICAL,PNB,2020-03,company_id+year,Removed duplicate row from balancesheet (kept last occurrence)
+DQ-02,CRITICAL,PNB,2021-03,company_id+year,Removed duplicate row from balancesheet (kept last occurrence)
+DQ-02,CRITICAL,PNB,2022-03,company_id+year,Removed duplicate row from balancesheet (kept last occurrence)
+DQ-02,CRITICAL,PNB,2023-03,company_id+year,Removed duplicate row from balancesheet (kept last occurrence)
+DQ-02,CRITICAL,PNB,2024-03,company_id+year,Removed duplicate row from balancesheet (kept last occurrence)
+DQ-02,CRITICAL,PNB,2013-03,company_id+year,Removed duplicate row from balancesheet (kept last occurrence)
+DQ-02,CRITICAL,PNB,2014-03,company_id+year,Removed duplicate row from balancesheet (kept last occurrence)
+DQ-02,CRITICAL,PNB,2015-03,company_id+year,Removed duplicate row from balancesheet (kept last occurrence)
+DQ-02,CRITICAL,PNB,2016-03,company_id+year,Removed duplicate row from balancesheet (kept last occurrence)
+DQ-02,CRITICAL,PNB,2017-03,company_id+year,Removed duplicate row from balancesheet (kept last occurrence)
+DQ-02,CRITICAL,PNB,2018-03,company_id+year,Removed duplicate row from balancesheet (kept last occurrence)
+DQ-02,CRITICAL,PNB,2019-03,company_id+year,Removed duplicate row from balancesheet (kept last occurrence)
+DQ-02,CRITICAL,PNB,2020-03,company_id+year,Removed duplicate row from balancesheet (kept last occurrence)
+DQ-02,CRITICAL,PNB,2021-03,company_id+year,Removed duplicate row from balancesheet (kept last occurrence)
+DQ-02,CRITICAL,PNB,2022-03,company_id+year,Removed duplicate row from balancesheet (kept last occurrence)
+DQ-02,CRITICAL,PNB,2023-03,company_id+year,Removed duplicate row from balancesheet (kept last occurrence)
+DQ-02,CRITICAL,PNB,2024-03,company_id+year,Removed duplicate row from balancesheet (kept last occurrence)
+DQ-02,CRITICAL,POWERGRID,2013-03,company_id+year,Removed duplicate row from balancesheet (kept last occurrence)
+DQ-02,CRITICAL,POWERGRID,2014-03,company_id+year,Removed duplicate row from balancesheet (kept last occurrence)
+DQ-02,CRITICAL,POWERGRID,2015-03,company_id+year,Removed duplicate row from balancesheet (kept last occurrence)
+DQ-02,CRITICAL,POWERGRID,2016-03,company_id+year,Removed duplicate row from balancesheet (kept last occurrence)
+DQ-02,CRITICAL,POWERGRID,2017-03,company_id+year,Removed duplicate row from balancesheet (kept last occurrence)
+DQ-02,CRITICAL,POWERGRID,2018-03,company_id+year,Removed duplicate row from balancesheet (kept last occurrence)
+DQ-02,CRITICAL,POWERGRID,2019-03,company_id+year,Removed duplicate row from balancesheet (kept last occurrence)
+DQ-02,CRITICAL,POWERGRID,2020-03,company_id+year,Removed duplicate row from balancesheet (kept last occurrence)
+DQ-02,CRITICAL,POWERGRID,2021-03,company_id+year,Removed duplicate row from balancesheet (kept last occurrence)
+DQ-02,CRITICAL,POWERGRID,2022-03,company_id+year,Removed duplicate row from balancesheet (kept last occurrence)
+DQ-02,CRITICAL,POWERGRID,2023-03,company_id+year,Removed duplicate row from balancesheet (kept last occurrence)
+DQ-02,CRITICAL,POWERGRID,2024-03,company_id+year,Removed duplicate row from balancesheet (kept last occurrence)
+DQ-02,CRITICAL,POWERGRID,2024-09,company_id+year,Removed duplicate row from balancesheet (kept last occurrence)
+DQ-02,CRITICAL,TECHM,2013-03,company_id+year,Removed duplicate row from balancesheet (kept last occurrence)
+DQ-02,CRITICAL,TECHM,2014-03,company_id+year,Removed duplicate row from balancesheet (kept last occurrence)
+DQ-02,CRITICAL,TECHM,2015-03,company_id+year,Removed duplicate row from balancesheet (kept last occurrence)
+DQ-02,CRITICAL,TECHM,2016-03,company_id+year,Removed duplicate row from balancesheet (kept last occurrence)
+DQ-02,CRITICAL,TECHM,2017-03,company_id+year,Removed duplicate row from balancesheet (kept last occurrence)
+DQ-02,CRITICAL,TECHM,2018-03,company_id+year,Removed duplicate row from balancesheet (kept last occurrence)
+DQ-02,CRITICAL,TECHM,2019-03,company_id+year,Removed duplicate row from balancesheet (kept last occurrence)
+DQ-02,CRITICAL,TECHM,2020-03,company_id+year,Removed duplicate row from balancesheet (kept last occurrence)
+DQ-02,CRITICAL,TECHM,2021-03,company_id+year,Removed duplicate row from balancesheet (kept last occurrence)
+DQ-02,CRITICAL,TECHM,2022-03,company_id+year,Removed duplicate row from balancesheet (kept last occurrence)
+DQ-02,CRITICAL,TECHM,2023-03,company_id+year,Removed duplicate row from balancesheet (kept last occurrence)
+DQ-02,CRITICAL,TECHM,2024-03,company_id+year,Removed duplicate row from balancesheet (kept last occurrence)
+DQ-02,CRITICAL,TECHM,2024-09,company_id+year,Removed duplicate row from balancesheet (kept last occurrence)
+DQ-03,CRITICAL,ZYDUSLIFE,2013-03,company_id,Excluded orphan row from balancesheet — company_id not in master companies table
+DQ-03,CRITICAL,ZYDUSLIFE,2014-03,company_id,Excluded orphan row from balancesheet — company_id not in master companies table
+DQ-03,CRITICAL,ZYDUSLIFE,2015-03,company_id,Excluded orphan row from balancesheet — company_id not in master companies table
+DQ-03,CRITICAL,ZYDUSLIFE,2016-03,company_id,Excluded orphan row from balancesheet — company_id not in master companies table
+DQ-03,CRITICAL,ZYDUSLIFE,2017-03,company_id,Excluded orphan row from balancesheet — company_id not in master companies table
+DQ-03,CRITICAL,ZYDUSLIFE,2018-03,company_id,Excluded orphan row from balancesheet — company_id not in master companies table
+DQ-03,CRITICAL,ZYDUSLIFE,2019-03,company_id,Excluded orphan row from balancesheet — company_id not in master companies table
+DQ-03,CRITICAL,ZYDUSLIFE,2020-03,company_id,Excluded orphan row from balancesheet — company_id not in master companies table
+DQ-03,CRITICAL,ZYDUSLIFE,2021-03,company_id,Excluded orphan row from balancesheet — company_id not in master companies table
+DQ-03,CRITICAL,ZYDUSLIFE,2022-03,company_id,Excluded orphan row from balancesheet — company_id not in master companies table
+DQ-03,CRITICAL,ZYDUSLIFE,2023-03,company_id,Excluded orphan row from balancesheet — company_id not in master companies table
+DQ-03,CRITICAL,ZYDUSLIFE,2024-03,company_id,Excluded orphan row from balancesheet — company_id not in master companies table
+DQ-03,CRITICAL,ZYDUSLIFE,PARSE_ERROR,company_id,Excluded orphan row from balancesheet — company_id not in master companies table
+DQ-03,CRITICAL,ZOMATO,2018-03,company_id,Excluded orphan row from balancesheet — company_id not in master companies table
+DQ-03,CRITICAL,ZOMATO,2019-03,company_id,Excluded orphan row from balancesheet — company_id not in master companies table
+DQ-03,CRITICAL,ZOMATO,2020-03,company_id,Excluded orphan row from balancesheet — company_id not in master companies table
+DQ-03,CRITICAL,ZOMATO,2021-03,company_id,Excluded orphan row from balancesheet — company_id not in master companies table
+DQ-03,CRITICAL,ZOMATO,2022-03,company_id,Excluded orphan row from balancesheet — company_id not in master companies table
+DQ-03,CRITICAL,ZOMATO,2023-03,company_id,Excluded orphan row from balancesheet — company_id not in master companies table
+DQ-03,CRITICAL,ZOMATO,2024-03,company_id,Excluded orphan row from balancesheet — company_id not in master companies table
+DQ-03,CRITICAL,ZOMATO,PARSE_ERROR,company_id,Excluded orphan row from balancesheet — company_id not in master companies table
+DQ-03,CRITICAL,WIPRO,2013-03,company_id,Excluded orphan row from balancesheet — company_id not in master companies table
+DQ-03,CRITICAL,WIPRO,2014-03,company_id,Excluded orphan row from balancesheet — company_id not in master companies table
+DQ-03,CRITICAL,WIPRO,2015-03,company_id,Excluded orphan row from balancesheet — company_id not in master companies table
+DQ-03,CRITICAL,WIPRO,2016-03,company_id,Excluded orphan row from balancesheet — company_id not in master companies table
+DQ-03,CRITICAL,WIPRO,2017-03,company_id,Excluded orphan row from balancesheet — company_id not in master companies table
+DQ-03,CRITICAL,WIPRO,2018-03,company_id,Excluded orphan row from balancesheet — company_id not in master companies table
+DQ-03,CRITICAL,WIPRO,2019-03,company_id,Excluded orphan row from balancesheet — company_id not in master companies table
+DQ-03,CRITICAL,WIPRO,2020-03,company_id,Excluded orphan row from balancesheet — company_id not in master companies table
+DQ-03,CRITICAL,WIPRO,2021-03,company_id,Excluded orphan row from balancesheet — company_id not in master companies table
+DQ-03,CRITICAL,WIPRO,2022-03,company_id,Excluded orphan row from balancesheet — company_id not in master companies table
+DQ-03,CRITICAL,WIPRO,2023-03,company_id,Excluded orphan row from balancesheet — company_id not in master companies table
+DQ-03,CRITICAL,WIPRO,2024-03,company_id,Excluded orphan row from balancesheet — company_id not in master companies table
+DQ-03,CRITICAL,WIPRO,PARSE_ERROR,company_id,Excluded orphan row from balancesheet — company_id not in master companies table
+DQ-03,CRITICAL,VEDL,2013-03,company_id,Excluded orphan row from balancesheet — company_id not in master companies table
+DQ-03,CRITICAL,VEDL,2014-03,company_id,Excluded orphan row from balancesheet — company_id not in master companies table
+DQ-03,CRITICAL,VEDL,2015-03,company_id,Excluded orphan row from balancesheet — company_id not in master companies table
+DQ-03,CRITICAL,VEDL,2016-03,company_id,Excluded orphan row from balancesheet — company_id not in master companies table
+DQ-03,CRITICAL,VEDL,2017-03,company_id,Excluded orphan row from balancesheet — company_id not in master companies table
+DQ-03,CRITICAL,VEDL,2018-03,company_id,Excluded orphan row from balancesheet — company_id not in master companies table
+DQ-03,CRITICAL,VEDL,2019-03,company_id,Excluded orphan row from balancesheet — company_id not in master companies table
+DQ-03,CRITICAL,VEDL,2020-03,company_id,Excluded orphan row from balancesheet — company_id not in master companies table
+DQ-03,CRITICAL,VEDL,2021-03,company_id,Excluded orphan row from balancesheet — company_id not in master companies table
+DQ-03,CRITICAL,VEDL,2022-03,company_id,Excluded orphan row from balancesheet — company_id not in master companies table
+DQ-03,CRITICAL,VEDL,2023-03,company_id,Excluded orphan row from balancesheet — company_id not in master companies table
+DQ-03,CRITICAL,VEDL,2024-03,company_id,Excluded orphan row from balancesheet — company_id not in master companies table
+DQ-03,CRITICAL,VEDL,PARSE_ERROR,company_id,Excluded orphan row from balancesheet — company_id not in master companies table
+DQ-03,CRITICAL,UNITDSPR,2013-03,company_id,Excluded orphan row from balancesheet — company_id not in master companies table
+DQ-03,CRITICAL,UNITDSPR,2014-03,company_id,Excluded orphan row from balancesheet — company_id not in master companies table
+DQ-03,CRITICAL,UNITDSPR,2015-03,company_id,Excluded orphan row from balancesheet — company_id not in master companies table
+DQ-03,CRITICAL,UNITDSPR,2016-03,company_id,Excluded orphan row from balancesheet — company_id not in master companies table
+DQ-03,CRITICAL,UNITDSPR,2017-03,company_id,Excluded orphan row from balancesheet — company_id not in master companies table
+DQ-03,CRITICAL,UNITDSPR,2018-03,company_id,Excluded orphan row from balancesheet — company_id not in master companies table
+DQ-03,CRITICAL,UNITDSPR,2019-03,company_id,Excluded orphan row from balancesheet — company_id not in master companies table
+DQ-03,CRITICAL,UNITDSPR,2020-03,company_id,Excluded orphan row from balancesheet — company_id not in master companies table
+DQ-03,CRITICAL,UNITDSPR,2021-03,company_id,Excluded orphan row from balancesheet — company_id not in master companies table
+DQ-03,CRITICAL,UNITDSPR,2022-03,company_id,Excluded orphan row from balancesheet — company_id not in master companies table
+DQ-03,CRITICAL,UNITDSPR,2023-03,company_id,Excluded orphan row from balancesheet — company_id not in master companies table
+DQ-03,CRITICAL,UNITDSPR,2024-03,company_id,Excluded orphan row from balancesheet — company_id not in master companies table
+DQ-03,CRITICAL,UNITDSPR,PARSE_ERROR,company_id,Excluded orphan row from balancesheet — company_id not in master companies table
+DQ-03,CRITICAL,UNIONBANK,2013-03,company_id,Excluded orphan row from balancesheet — company_id not in master companies table
+DQ-03,CRITICAL,UNIONBANK,2014-03,company_id,Excluded orphan row from balancesheet — company_id not in master companies table
+DQ-03,CRITICAL,UNIONBANK,2015-03,company_id,Excluded orphan row from balancesheet — company_id not in master companies table
+DQ-03,CRITICAL,UNIONBANK,2016-03,company_id,Excluded orphan row from balancesheet — company_id not in master companies table
+DQ-03,CRITICAL,UNIONBANK,2017-03,company_id,Excluded orphan row from balancesheet — company_id not in master companies table
+DQ-03,CRITICAL,UNIONBANK,2018-03,company_id,Excluded orphan row from balancesheet — company_id not in master companies table
+DQ-03,CRITICAL,UNIONBANK,2019-03,company_id,Excluded orphan row from balancesheet — company_id not in master companies table
+DQ-03,CRITICAL,UNIONBANK,2020-03,company_id,Excluded orphan row from balancesheet — company_id not in master companies table
+DQ-03,CRITICAL,UNIONBANK,2021-03,company_id,Excluded orphan row from balancesheet — company_id not in master companies table
+DQ-03,CRITICAL,UNIONBANK,2022-03,company_id,Excluded orphan row from balancesheet — company_id not in master companies table
+DQ-03,CRITICAL,UNIONBANK,2023-03,company_id,Excluded orphan row from balancesheet — company_id not in master companies table
+DQ-03,CRITICAL,UNIONBANK,2024-03,company_id,Excluded orphan row from balancesheet — company_id not in master companies table
+DQ-03,CRITICAL,ULTRACEMCO,2013-03,company_id,Excluded orphan row from balancesheet — company_id not in master companies table
+DQ-03,CRITICAL,ULTRACEMCO,2014-03,company_id,Excluded orphan row from balancesheet — company_id not in master companies table
+DQ-03,CRITICAL,ULTRACEMCO,2015-03,company_id,Excluded orphan row from balancesheet — company_id not in master companies table
+DQ-03,CRITICAL,ULTRACEMCO,2016-03,company_id,Excluded orphan row from balancesheet — company_id not in master companies table
+DQ-03,CRITICAL,ULTRACEMCO,2017-03,company_id,Excluded orphan row from balancesheet — company_id not in master companies table
+DQ-03,CRITICAL,ULTRACEMCO,2018-03,company_id,Excluded orphan row from balancesheet — company_id not in master companies table
+DQ-03,CRITICAL,ULTRACEMCO,2019-03,company_id,Excluded orphan row from balancesheet — company_id not in master companies table
+DQ-03,CRITICAL,ULTRACEMCO,2020-03,company_id,Excluded orphan row from balancesheet — company_id not in master companies table
+DQ-03,CRITICAL,ULTRACEMCO,2021-03,company_id,Excluded orphan row from balancesheet — company_id not in master companies table
+DQ-03,CRITICAL,ULTRACEMCO,2022-03,company_id,Excluded orphan row from balancesheet — company_id not in master companies table
+DQ-03,CRITICAL,ULTRACEMCO,2023-03,company_id,Excluded orphan row from balancesheet — company_id not in master companies table
+DQ-03,CRITICAL,ULTRACEMCO,2024-03,company_id,Excluded orphan row from balancesheet — company_id not in master companies table
+DQ-03,CRITICAL,ULTRACEMCO,2024-09,company_id,Excluded orphan row from balancesheet — company_id not in master companies table
+DQ-02,CRITICAL,TCS,2013-03,company_id+year,Removed duplicate row from cashflow (kept last occurrence)
+DQ-02,CRITICAL,TCS,2014-03,company_id+year,Removed duplicate row from cashflow (kept last occurrence)
+DQ-02,CRITICAL,TCS,2015-03,company_id+year,Removed duplicate row from cashflow (kept last occurrence)
+DQ-02,CRITICAL,TCS,2016-03,company_id+year,Removed duplicate row from cashflow (kept last occurrence)
+DQ-02,CRITICAL,TCS,2017-03,company_id+year,Removed duplicate row from cashflow (kept last occurrence)
+DQ-02,CRITICAL,TCS,2018-03,company_id+year,Removed duplicate row from cashflow (kept last occurrence)
+DQ-02,CRITICAL,TCS,2019-03,company_id+year,Removed duplicate row from cashflow (kept last occurrence)
+DQ-02,CRITICAL,TCS,2020-03,company_id+year,Removed duplicate row from cashflow (kept last occurrence)
+DQ-02,CRITICAL,TCS,2021-03,company_id+year,Removed duplicate row from cashflow (kept last occurrence)
+DQ-02,CRITICAL,TCS,2022-03,company_id+year,Removed duplicate row from cashflow (kept last occurrence)
+DQ-02,CRITICAL,TCS,2023-03,company_id+year,Removed duplicate row from cashflow (kept last occurrence)
+DQ-02,CRITICAL,TCS,2024-03,company_id+year,Removed duplicate row from cashflow (kept last occurrence)
+DQ-02,CRITICAL,ABB,2014-03,company_id+year,Removed duplicate row from cashflow (kept last occurrence)
+DQ-02,CRITICAL,ABB,2015-03,company_id+year,Removed duplicate row from cashflow (kept last occurrence)
+DQ-02,CRITICAL,ABB,2016-03,company_id+year,Removed duplicate row from cashflow (kept last occurrence)
+DQ-02,CRITICAL,ABB,2017-03,company_id+year,Removed duplicate row from cashflow (kept last occurrence)
+DQ-02,CRITICAL,ABB,2018-03,company_id+year,Removed duplicate row from cashflow (kept last occurrence)
+DQ-02,CRITICAL,ABB,2019-03,company_id+year,Removed duplicate row from cashflow (kept last occurrence)
+DQ-02,CRITICAL,ABB,2020-03,company_id+year,Removed duplicate row from cashflow (kept last occurrence)
+DQ-02,CRITICAL,ABB,2021-03,company_id+year,Removed duplicate row from cashflow (kept last occurrence)
+DQ-02,CRITICAL,ABB,2022-03,company_id+year,Removed duplicate row from cashflow (kept last occurrence)
+DQ-02,CRITICAL,ABB,2023-03,company_id+year,Removed duplicate row from cashflow (kept last occurrence)
+DQ-02,CRITICAL,ABB,2024-03,company_id+year,Removed duplicate row from cashflow (kept last occurrence)
+DQ-02,CRITICAL,BAJAJ-AUTO,2013-03,company_id+year,Removed duplicate row from cashflow (kept last occurrence)
+DQ-02,CRITICAL,BAJAJ-AUTO,2014-03,company_id+year,Removed duplicate row from cashflow (kept last occurrence)
+DQ-02,CRITICAL,BAJAJ-AUTO,2015-03,company_id+year,Removed duplicate row from cashflow (kept last occurrence)
+DQ-02,CRITICAL,BAJAJ-AUTO,2016-03,company_id+year,Removed duplicate row from cashflow (kept last occurrence)
+DQ-02,CRITICAL,BAJAJ-AUTO,2017-03,company_id+year,Removed duplicate row from cashflow (kept last occurrence)
+DQ-02,CRITICAL,BAJAJ-AUTO,2018-03,company_id+year,Removed duplicate row from cashflow (kept last occurrence)
+DQ-02,CRITICAL,BAJAJ-AUTO,2019-03,company_id+year,Removed duplicate row from cashflow (kept last occurrence)
+DQ-02,CRITICAL,BAJAJ-AUTO,2020-03,company_id+year,Removed duplicate row from cashflow (kept last occurrence)
+DQ-02,CRITICAL,BAJAJ-AUTO,2021-03,company_id+year,Removed duplicate row from cashflow (kept last occurrence)
+DQ-02,CRITICAL,BAJAJ-AUTO,2022-03,company_id+year,Removed duplicate row from cashflow (kept last occurrence)
+DQ-02,CRITICAL,BAJAJ-AUTO,2023-03,company_id+year,Removed duplicate row from cashflow (kept last occurrence)
+DQ-02,CRITICAL,BAJAJ-AUTO,2024-03,company_id+year,Removed duplicate row from cashflow (kept last occurrence)
+DQ-03,CRITICAL,AGTL,2018-03,company_id,Excluded orphan row from cashflow — company_id not in master companies table
+DQ-03,CRITICAL,AGTL,2019-03,company_id,Excluded orphan row from cashflow — company_id not in master companies table
+DQ-03,CRITICAL,AGTL,2020-03,company_id,Excluded orphan row from cashflow — company_id not in master companies table
+DQ-03,CRITICAL,AGTL,2021-03,company_id,Excluded orphan row from cashflow — company_id not in master companies table
+DQ-03,CRITICAL,AGTL,2022-03,company_id,Excluded orphan row from cashflow — company_id not in master companies table
+DQ-03,CRITICAL,AGTL,2023-03,company_id,Excluded orphan row from cashflow — company_id not in master companies table
+DQ-03,CRITICAL,AGTL,2024-03,company_id,Excluded orphan row from cashflow — company_id not in master companies table
+DQ-03,CRITICAL,ULTRACEMCO,2013-03,company_id,Excluded orphan row from cashflow — company_id not in master companies table
+DQ-03,CRITICAL,ULTRACEMCO,2014-03,company_id,Excluded orphan row from cashflow — company_id not in master companies table
+DQ-03,CRITICAL,ULTRACEMCO,2015-03,company_id,Excluded orphan row from cashflow — company_id not in master companies table
+DQ-03,CRITICAL,ULTRACEMCO,2016-03,company_id,Excluded orphan row from cashflow — company_id not in master companies table
+DQ-03,CRITICAL,ULTRACEMCO,2017-03,company_id,Excluded orphan row from cashflow — company_id not in master companies table
+DQ-03,CRITICAL,ULTRACEMCO,2018-03,company_id,Excluded orphan row from cashflow — company_id not in master companies table
+DQ-03,CRITICAL,ULTRACEMCO,2019-03,company_id,Excluded orphan row from cashflow — company_id not in master companies table
+DQ-03,CRITICAL,ULTRACEMCO,2020-03,company_id,Excluded orphan row from cashflow — company_id not in master companies table
+DQ-03,CRITICAL,ULTRACEMCO,2021-03,company_id,Excluded orphan row from cashflow — company_id not in master companies table
+DQ-03,CRITICAL,ULTRACEMCO,2022-03,company_id,Excluded orphan row from cashflow — company_id not in master companies table
+DQ-03,CRITICAL,ULTRACEMCO,2023-03,company_id,Excluded orphan row from cashflow — company_id not in master companies table
+DQ-03,CRITICAL,ULTRACEMCO,2024-03,company_id,Excluded orphan row from cashflow — company_id not in master companies table
+DQ-03,CRITICAL,UNIONBANK,2013-03,company_id,Excluded orphan row from cashflow — company_id not in master companies table
+DQ-03,CRITICAL,UNIONBANK,2014-03,company_id,Excluded orphan row from cashflow — company_id not in master companies table
+DQ-03,CRITICAL,UNIONBANK,2015-03,company_id,Excluded orphan row from cashflow — company_id not in master companies table
+DQ-03,CRITICAL,UNIONBANK,2016-03,company_id,Excluded orphan row from cashflow — company_id not in master companies table
+DQ-03,CRITICAL,UNIONBANK,2017-03,company_id,Excluded orphan row from cashflow — company_id not in master companies table
+DQ-03,CRITICAL,UNIONBANK,2018-03,company_id,Excluded orphan row from cashflow — company_id not in master companies table
+DQ-03,CRITICAL,UNIONBANK,2019-03,company_id,Excluded orphan row from cashflow — company_id not in master companies table
+DQ-03,CRITICAL,UNIONBANK,2020-03,company_id,Excluded orphan row from cashflow — company_id not in master companies table
+DQ-03,CRITICAL,UNIONBANK,2021-03,company_id,Excluded orphan row from cashflow — company_id not in master companies table
+DQ-03,CRITICAL,UNIONBANK,2022-03,company_id,Excluded orphan row from cashflow — company_id not in master companies table
+DQ-03,CRITICAL,UNIONBANK,2023-03,company_id,Excluded orphan row from cashflow — company_id not in master companies table
+DQ-03,CRITICAL,UNIONBANK,2024-03,company_id,Excluded orphan row from cashflow — company_id not in master companies table
+DQ-03,CRITICAL,UNITDSPR,2013-03,company_id,Excluded orphan row from cashflow — company_id not in master companies table
+DQ-03,CRITICAL,UNITDSPR,2014-03,company_id,Excluded orphan row from cashflow — company_id not in master companies table
+DQ-03,CRITICAL,UNITDSPR,2015-03,company_id,Excluded orphan row from cashflow — company_id not in master companies table
+DQ-03,CRITICAL,UNITDSPR,2016-03,company_id,Excluded orphan row from cashflow — company_id not in master companies table
+DQ-03,CRITICAL,UNITDSPR,2017-03,company_id,Excluded orphan row from cashflow — company_id not in master companies table
+DQ-03,CRITICAL,UNITDSPR,2018-03,company_id,Excluded orphan row from cashflow — company_id not in master companies table
+DQ-03,CRITICAL,UNITDSPR,2019-03,company_id,Excluded orphan row from cashflow — company_id not in master companies table
+DQ-03,CRITICAL,UNITDSPR,2020-03,company_id,Excluded orphan row from cashflow — company_id not in master companies table
+DQ-03,CRITICAL,UNITDSPR,2021-03,company_id,Excluded orphan row from cashflow — company_id not in master companies table
+DQ-03,CRITICAL,UNITDSPR,2022-03,company_id,Excluded orphan row from cashflow — company_id not in master companies table
+DQ-03,CRITICAL,UNITDSPR,2023-03,company_id,Excluded orphan row from cashflow — company_id not in master companies table
+DQ-03,CRITICAL,UNITDSPR,2024-03,company_id,Excluded orphan row from cashflow — company_id not in master companies table
+DQ-03,CRITICAL,VBL,2012-12,company_id,Excluded orphan row from cashflow — company_id not in master companies table
+DQ-03,CRITICAL,VBL,2013-12,company_id,Excluded orphan row from cashflow — company_id not in master companies table
+DQ-03,CRITICAL,VBL,2014-12,company_id,Excluded orphan row from cashflow — company_id not in master companies table
+DQ-03,CRITICAL,VBL,2015-12,company_id,Excluded orphan row from cashflow — company_id not in master companies table
+DQ-03,CRITICAL,VBL,2016-12,company_id,Excluded orphan row from cashflow — company_id not in master companies table
+DQ-03,CRITICAL,VBL,2017-12,company_id,Excluded orphan row from cashflow — company_id not in master companies table
+DQ-03,CRITICAL,VBL,2018-12,company_id,Excluded orphan row from cashflow — company_id not in master companies table
+DQ-03,CRITICAL,VBL,2019-12,company_id,Excluded orphan row from cashflow — company_id not in master companies table
+DQ-03,CRITICAL,VBL,2020-12,company_id,Excluded orphan row from cashflow — company_id not in master companies table
+DQ-03,CRITICAL,VBL,2021-12,company_id,Excluded orphan row from cashflow — company_id not in master companies table
+DQ-03,CRITICAL,VBL,2022-12,company_id,Excluded orphan row from cashflow — company_id not in master companies table
+DQ-03,CRITICAL,VBL,2023-12,company_id,Excluded orphan row from cashflow — company_id not in master companies table
+DQ-03,CRITICAL,VEDL,2013-03,company_id,Excluded orphan row from cashflow — company_id not in master companies table
+DQ-03,CRITICAL,VEDL,2014-03,company_id,Excluded orphan row from cashflow — company_id not in master companies table
+DQ-03,CRITICAL,VEDL,2015-03,company_id,Excluded orphan row from cashflow — company_id not in master companies table
+DQ-03,CRITICAL,VEDL,2016-03,company_id,Excluded orphan row from cashflow — company_id not in master companies table
+DQ-03,CRITICAL,VEDL,2017-03,company_id,Excluded orphan row from cashflow — company_id not in master companies table
+DQ-03,CRITICAL,VEDL,2018-03,company_id,Excluded orphan row from cashflow — company_id not in master companies table
+DQ-03,CRITICAL,VEDL,2019-03,company_id,Excluded orphan row from cashflow — company_id not in master companies table
+DQ-03,CRITICAL,VEDL,2020-03,company_id,Excluded orphan row from cashflow — company_id not in master companies table
+DQ-03,CRITICAL,VEDL,2021-03,company_id,Excluded orphan row from cashflow — company_id not in master companies table
+DQ-03,CRITICAL,VEDL,2022-03,company_id,Excluded orphan row from cashflow — company_id not in master companies table
+DQ-03,CRITICAL,VEDL,2023-03,company_id,Excluded orphan row from cashflow — company_id not in master companies table
+DQ-03,CRITICAL,VEDL,2024-03,company_id,Excluded orphan row from cashflow — company_id not in master companies table
+DQ-03,CRITICAL,WIPRO,2013-03,company_id,Excluded orphan row from cashflow — company_id not in master companies table
+DQ-03,CRITICAL,WIPRO,2014-03,company_id,Excluded orphan row from cashflow — company_id not in master companies table
+DQ-03,CRITICAL,WIPRO,2015-03,company_id,Excluded orphan row from cashflow — company_id not in master companies table
+DQ-03,CRITICAL,WIPRO,2016-03,company_id,Excluded orphan row from cashflow — company_id not in master companies table
+DQ-03,CRITICAL,WIPRO,2017-03,company_id,Excluded orphan row from cashflow — company_id not in master companies table
+DQ-03,CRITICAL,WIPRO,2018-03,company_id,Excluded orphan row from cashflow — company_id not in master companies table
+DQ-03,CRITICAL,WIPRO,2019-03,company_id,Excluded orphan row from cashflow — company_id not in master companies table
+DQ-03,CRITICAL,WIPRO,2020-03,company_id,Excluded orphan row from cashflow — company_id not in master companies table
+DQ-03,CRITICAL,WIPRO,2021-03,company_id,Excluded orphan row from cashflow — company_id not in master companies table
+DQ-03,CRITICAL,WIPRO,2022-03,company_id,Excluded orphan row from cashflow — company_id not in master companies table
+DQ-03,CRITICAL,WIPRO,2023-03,company_id,Excluded orphan row from cashflow — company_id not in master companies table
+DQ-03,CRITICAL,WIPRO,2024-03,company_id,Excluded orphan row from cashflow — company_id not in master companies table
+DQ-03,CRITICAL,ZOMATO,2020-03,company_id,Excluded orphan row from cashflow — company_id not in master companies table
+DQ-03,CRITICAL,ZOMATO,2021-03,company_id,Excluded orphan row from cashflow — company_id not in master companies table
+DQ-03,CRITICAL,ZOMATO,2022-03,company_id,Excluded orphan row from cashflow — company_id not in master companies table
+DQ-03,CRITICAL,ZOMATO,2023-03,company_id,Excluded orphan row from cashflow — company_id not in master companies table
+DQ-03,CRITICAL,ZOMATO,2024-03,company_id,Excluded orphan row from cashflow — company_id not in master companies table
+DQ-03,CRITICAL,ZYDUSLIFE,2013-03,company_id,Excluded orphan row from cashflow — company_id not in master companies table
+DQ-03,CRITICAL,ZYDUSLIFE,2014-03,company_id,Excluded orphan row from cashflow — company_id not in master companies table
+DQ-03,CRITICAL,ZYDUSLIFE,2015-03,company_id,Excluded orphan row from cashflow — company_id not in master companies table
+DQ-03,CRITICAL,ZYDUSLIFE,2016-03,company_id,Excluded orphan row from cashflow — company_id not in master companies table
+DQ-03,CRITICAL,ZYDUSLIFE,2017-03,company_id,Excluded orphan row from cashflow — company_id not in master companies table
+DQ-03,CRITICAL,ZYDUSLIFE,2018-03,company_id,Excluded orphan row from cashflow — company_id not in master companies table
+DQ-03,CRITICAL,ZYDUSLIFE,2019-03,company_id,Excluded orphan row from cashflow — company_id not in master companies table
+DQ-03,CRITICAL,ZYDUSLIFE,2020-03,company_id,Excluded orphan row from cashflow — company_id not in master companies table
+DQ-03,CRITICAL,ZYDUSLIFE,2021-03,company_id,Excluded orphan row from cashflow — company_id not in master companies table
+DQ-03,CRITICAL,ZYDUSLIFE,2022-03,company_id,Excluded orphan row from cashflow — company_id not in master companies table
+DQ-03,CRITICAL,ZYDUSLIFE,2023-03,company_id,Excluded orphan row from cashflow — company_id not in master companies table
+DQ-03,CRITICAL,ZYDUSLIFE,2024-03,company_id,Excluded orphan row from cashflow — company_id not in master companies table
+DQ-05,WARNING,ADANIENSOL,2024-03,opm_percentage,"OPM mismatch: stated=30.00%, computed=34.39%, diff=4.39"
+DQ-05,WARNING,CIPLA,2013-03,opm_percentage,"OPM mismatch: stated=2214.00%, computed=73.26%, diff=2140.74"
+DQ-05,WARNING,CIPLA,2014-03,opm_percentage,"OPM mismatch: stated=2147.00%, computed=78.90%, diff=2068.10"
+DQ-05,WARNING,CIPLA,2015-03,opm_percentage,"OPM mismatch: stated=2163.00%, computed=80.94%, diff=2082.06"
+DQ-05,WARNING,CIPLA,2016-03,opm_percentage,"OPM mismatch: stated=2480.00%, computed=82.02%, diff=2397.98"
+DQ-05,WARNING,CIPLA,2017-03,opm_percentage,"OPM mismatch: stated=2496.00%, computed=82.66%, diff=2413.34"
+DQ-05,WARNING,CIPLA,2018-03,opm_percentage,"OPM mismatch: stated=2826.00%, computed=81.35%, diff=2744.65"
+DQ-05,WARNING,CIPLA,2019-03,opm_percentage,"OPM mismatch: stated=3097.00%, computed=81.07%, diff=3015.93"
+DQ-05,WARNING,CIPLA,2020-03,opm_percentage,"OPM mismatch: stated=3206.00%, computed=81.29%, diff=3124.71"
+DQ-05,WARNING,CIPLA,2021-03,opm_percentage,"OPM mismatch: stated=4252.00%, computed=77.80%, diff=4174.20"
+DQ-05,WARNING,CIPLA,2022-03,opm_percentage,"OPM mismatch: stated=4553.00%, computed=79.08%, diff=4473.92"
+DQ-05,WARNING,CIPLA,2023-03,opm_percentage,"OPM mismatch: stated=5027.00%, computed=77.91%, diff=4949.09"
+DQ-05,WARNING,CIPLA,2024-03,opm_percentage,"OPM mismatch: stated=6291.00%, computed=75.59%, diff=6215.41"
+DQ-05,WARNING,CIPLA,TTM,opm_percentage,"OPM mismatch: stated=6906.00%, computed=74.40%, diff=6831.60"
+DQ-05,WARNING,COALINDIA,2013-03,opm_percentage,"OPM mismatch: stated=18087.00%, computed=73.52%, diff=18013.48"
+DQ-05,WARNING,COALINDIA,2014-03,opm_percentage,"OPM mismatch: stated=17766.00%, computed=74.84%, diff=17691.16"
+DQ-05,WARNING,COALINDIA,2015-03,opm_percentage,"OPM mismatch: stated=17343.00%, computed=76.60%, diff=17266.40"
+DQ-05,WARNING,COALINDIA,2016-03,opm_percentage,"OPM mismatch: stated=18714.00%, computed=75.96%, diff=18638.04"
+DQ-05,WARNING,COALINDIA,2017-03,opm_percentage,"OPM mismatch: stated=12448.00%, computed=84.07%, diff=12363.93"
+DQ-05,WARNING,COALINDIA,2018-03,opm_percentage,"OPM mismatch: stated=9288.00%, computed=89.10%, diff=9198.90"
+DQ-05,WARNING,COALINDIA,2019-03,opm_percentage,"OPM mismatch: stated=25007.00%, computed=74.89%, diff=24932.11"
+DQ-05,WARNING,COALINDIA,2020-03,opm_percentage,"OPM mismatch: stated=21581.00%, computed=77.54%, diff=21503.46"
+DQ-05,WARNING,COALINDIA,2021-03,opm_percentage,"OPM mismatch: stated=18628.00%, computed=79.31%, diff=18548.69"
+DQ-05,WARNING,COALINDIA,2022-03,opm_percentage,"OPM mismatch: stated=24721.00%, computed=77.47%, diff=24643.53"
+DQ-05,WARNING,COALINDIA,2023-03,opm_percentage,"OPM mismatch: stated=44232.00%, computed=68.01%, diff=44163.99"
+DQ-05,WARNING,COALINDIA,2024-03,opm_percentage,"OPM mismatch: stated=47971.00%, computed=66.29%, diff=47904.71"
+DQ-05,WARNING,COALINDIA,TTM,opm_percentage,"OPM mismatch: stated=46610.00%, computed=66.78%, diff=46543.22"
+DQ-05,WARNING,HEROMOTOCO,2014-03,opm_percentage,"OPM mismatch: stated=3553.00%, computed=85.94%, diff=3467.06"
+DQ-05,WARNING,HEROMOTOCO,2015-03,opm_percentage,"OPM mismatch: stated=3520.00%, computed=87.22%, diff=3432.78"
+DQ-05,WARNING,HEROMOTOCO,2016-03,opm_percentage,"OPM mismatch: stated=4424.00%, computed=84.45%, diff=4339.55"
+DQ-05,WARNING,HEROMOTOCO,2017-03,opm_percentage,"OPM mismatch: stated=4585.00%, computed=83.97%, diff=4501.03"
+DQ-05,WARNING,HEROMOTOCO,2018-03,opm_percentage,"OPM mismatch: stated=5334.00%, computed=83.57%, diff=5250.43"
+DQ-05,WARNING,HEROMOTOCO,2019-03,opm_percentage,"OPM mismatch: stated=5025.00%, computed=85.21%, diff=4939.79"
+DQ-05,WARNING,HEROMOTOCO,2020-03,opm_percentage,"OPM mismatch: stated=4070.00%, computed=86.09%, diff=3983.91"
+DQ-05,WARNING,HEROMOTOCO,2021-03,opm_percentage,"OPM mismatch: stated=4058.00%, computed=86.90%, diff=3971.10"
+DQ-05,WARNING,HEROMOTOCO,2022-03,opm_percentage,"OPM mismatch: stated=3256.00%, computed=88.98%, diff=3167.02"
+DQ-05,WARNING,HEROMOTOCO,2023-03,opm_percentage,"OPM mismatch: stated=4099.00%, computed=88.00%, diff=4011.00"
+DQ-05,WARNING,HEROMOTOCO,2024-03,opm_percentage,"OPM mismatch: stated=5235.00%, computed=86.15%, diff=5148.85"
+DQ-05,WARNING,HEROMOTOCO,TTM,opm_percentage,"OPM mismatch: stated=5561.00%, computed=86.13%, diff=5474.87"
+DQ-05,WARNING,HINDALCO,2013-03,opm_percentage,"OPM mismatch: stated=7699.00%, computed=90.40%, diff=7608.60"
+DQ-05,WARNING,HINDALCO,2014-03,opm_percentage,"OPM mismatch: stated=8024.00%, computed=90.85%, diff=7933.15"
+DQ-05,WARNING,HINDALCO,2015-03,opm_percentage,"OPM mismatch: stated=8844.00%, computed=91.52%, diff=8752.48"
+DQ-05,WARNING,HINDALCO,2016-03,opm_percentage,"OPM mismatch: stated=7778.00%, computed=92.12%, diff=7685.88"
+DQ-05,WARNING,HINDALCO,2017-03,opm_percentage,"OPM mismatch: stated=12317.00%, computed=87.71%, diff=12229.29"
+DQ-05,WARNING,HINDALCO,2018-03,opm_percentage,"OPM mismatch: stated=13695.00%, computed=88.11%, diff=13606.89"
+DQ-05,WARNING,HINDALCO,2019-03,opm_percentage,"OPM mismatch: stated=15511.00%, computed=88.12%, diff=15422.88"
+DQ-05,WARNING,HINDALCO,2020-03,opm_percentage,"OPM mismatch: stated=14306.00%, computed=87.89%, diff=14218.11"
+DQ-05,WARNING,HINDALCO,2021-03,opm_percentage,"OPM mismatch: stated=17559.00%, computed=86.70%, diff=17472.30"
+DQ-05,WARNING,HINDALCO,2022-03,opm_percentage,"OPM mismatch: stated=28347.00%, computed=85.47%, diff=28261.53"
+DQ-05,WARNING,HINDALCO,2023-03,opm_percentage,"OPM mismatch: stated=22666.00%, computed=89.85%, diff=22576.15"
+DQ-05,WARNING,HINDALCO,2024-03,opm_percentage,"OPM mismatch: stated=23872.00%, computed=88.95%, diff=23783.05"
+DQ-05,WARNING,HINDALCO,TTM,opm_percentage,"OPM mismatch: stated=27931.00%, computed=87.53%, diff=27843.47"
+DQ-05,WARNING,HINDUNILVR,2013-03,opm_percentage,"OPM mismatch: stated=4220.00%, computed=84.37%, diff=4135.63"
+DQ-05,WARNING,HINDUNILVR,2014-03,opm_percentage,"OPM mismatch: stated=4759.00%, computed=83.72%, diff=4675.28"
+DQ-05,WARNING,HINDUNILVR,2015-03,opm_percentage,"OPM mismatch: stated=5412.00%, computed=83.07%, diff=5328.93"
+DQ-05,WARNING,HINDUNILVR,2016-03,opm_percentage,"OPM mismatch: stated=5910.00%, computed=81.64%, diff=5828.36"
+DQ-05,WARNING,HINDUNILVR,2017-03,opm_percentage,"OPM mismatch: stated=6328.00%, computed=80.92%, diff=6247.08"
+DQ-05,WARNING,HINDUNILVR,2018-03,opm_percentage,"OPM mismatch: stated=7499.00%, computed=78.90%, diff=7420.10"
+DQ-05,WARNING,HINDUNILVR,2019-03,opm_percentage,"OPM mismatch: stated=8880.00%, computed=77.41%, diff=8802.59"
+DQ-05,WARNING,HINDUNILVR,2020-03,opm_percentage,"OPM mismatch: stated=9861.00%, computed=75.21%, diff=9785.79"
+DQ-05,WARNING,HINDUNILVR,2021-03,opm_percentage,"OPM mismatch: stated=11626.00%, computed=75.28%, diff=11550.72"
+DQ-05,WARNING,HINDUNILVR,2022-03,opm_percentage,"OPM mismatch: stated=12857.00%, computed=75.49%, diff=12781.51"
+DQ-05,WARNING,HINDUNILVR,2023-03,opm_percentage,"OPM mismatch: stated=14147.00%, computed=76.65%, diff=14070.35"
+DQ-05,WARNING,HINDUNILVR,2024-03,opm_percentage,"OPM mismatch: stated=14659.00%, computed=76.32%, diff=14582.68"
+DQ-05,WARNING,HINDUNILVR,TTM,opm_percentage,"OPM mismatch: stated=14759.00%, computed=76.45%, diff=14682.55"
+DQ-05,WARNING,SUNPHARMA,2024-03,opm_percentage,"OPM mismatch: stated=28.00%, computed=26.84%, diff=1.16"
+DQ-05,WARNING,INDIGO,2013-03,opm_percentage,"OPM mismatch: stated=855.00%, computed=90.71%, diff=764.29"
+DQ-05,WARNING,INDIGO,2014-03,opm_percentage,"OPM mismatch: stated=433.00%, computed=96.11%, diff=336.89"
+DQ-05,WARNING,INDIGO,2015-03,opm_percentage,"OPM mismatch: stated=1904.00%, computed=86.33%, diff=1817.67"
+DQ-05,WARNING,INDIGO,2016-03,opm_percentage,"OPM mismatch: stated=3164.00%, computed=80.40%, diff=3083.60"
+DQ-05,WARNING,INDIGO,2017-03,opm_percentage,"OPM mismatch: stated=2219.00%, computed=88.06%, diff=2130.94"
+DQ-05,WARNING,INDIGO,2018-03,opm_percentage,"OPM mismatch: stated=3030.00%, computed=86.84%, diff=2943.16"
+DQ-05,WARNING,INDIGO,2019-03,opm_percentage,"OPM mismatch: stated=-151.00%, computed=100.53%, diff=251.53"
+DQ-05,WARNING,INDIGO,2020-03,opm_percentage,"OPM mismatch: stated=4069.00%, computed=88.62%, diff=3980.38"
+DQ-05,WARNING,INDIGO,2021-03,opm_percentage,"OPM mismatch: stated=2.00%, computed=99.98%, diff=97.98"
+DQ-05,WARNING,INDIGO,2022-03,opm_percentage,"OPM mismatch: stated=558.00%, computed=97.85%, diff=460.15"
+DQ-05,WARNING,INDIGO,2023-03,opm_percentage,"OPM mismatch: stated=6521.00%, computed=88.02%, diff=6432.98"
+DQ-05,WARNING,INDIGO,2024-03,opm_percentage,"OPM mismatch: stated=16331.00%, computed=76.30%, diff=16254.70"
+DQ-05,WARNING,INDIGO,TTM,opm_percentage,"OPM mismatch: stated=15908.00%, computed=79.20%, diff=15828.80"
+DQ-06,WARNING,ADANIENSOL,2014-03,sales,Non-positive sales value: 0
+DQ-07,CRITICAL,AMBUJACEM,PARSE_ERROR,year,Unparseable year value in profitandloss — row rejected
+DQ-07,CRITICAL,HCLTECH,PARSE_ERROR,year,Unparseable year value in profitandloss — row rejected
+DQ-07,CRITICAL,SHREECEM,PARSE_ERROR,year,Unparseable year value in profitandloss — row rejected
+DQ-09,WARNING,TVSMOTOR,2022-03,net_cash_flow,"Net cash flow mismatch: stated=532.0, computed=-128.0, diff=660.0 Cr"
+DQ-11,WARNING,ADANIENT,2014-03,tax_percentage,Tax rate out of expected range: -64.0%
+DQ-11,WARNING,ADANIGREEN,2017-03,tax_percentage,Tax rate out of expected range: -75.0%
+DQ-11,WARNING,ADANIGREEN,2018-03,tax_percentage,Tax rate out of expected range: -35.0%
+DQ-11,WARNING,ADANIGREEN,2019-03,tax_percentage,Tax rate out of expected range: -19.0%
+DQ-11,WARNING,ADANIPOWER,2014-03,tax_percentage,Tax rate out of expected range: -79.0%
+DQ-11,WARNING,ADANIPOWER,2016-03,tax_percentage,Tax rate out of expected range: -47.0%
+DQ-11,WARNING,ADANIPOWER,2017-03,tax_percentage,Tax rate out of expected range: -1.0%
+DQ-11,WARNING,ADANIPOWER,2023-03,tax_percentage,Tax rate out of expected range: -40.0%
+DQ-11,WARNING,AMBUJACEM,2018-12,tax_percentage,Tax rate out of expected range: -2.0%
+DQ-11,WARNING,APOLLOHOSP,2018-03,tax_percentage,Tax rate out of expected range: 65.0%
+DQ-11,WARNING,AXISBANK,2018-03,tax_percentage,Tax rate out of expected range: -99.0%
+DQ-11,WARNING,AXISBANK,2020-03,tax_percentage,Tax rate out of expected range: 67.0%
+DQ-11,WARNING,BANKBARODA,2016-03,tax_percentage,Tax rate out of expected range: -19.0%
+DQ-11,WARNING,BANKBARODA,2018-03,tax_percentage,Tax rate out of expected range: -9.0%
+DQ-11,WARNING,BANKBARODA,2020-03,tax_percentage,Tax rate out of expected range: -99.0%
+DQ-11,WARNING,BANKBARODA,2021-03,tax_percentage,Tax rate out of expected range: 77.0%
+DQ-11,WARNING,BHARTIARTL,2014-03,tax_percentage,Tax rate out of expected range: 62.0%
+DQ-11,WARNING,BHARTIARTL,2019-03,tax_percentage,Tax rate out of expected range: -99.0%
+DQ-11,WARNING,BHARTIARTL,2020-03,tax_percentage,Tax rate out of expected range: -28.0%
+DQ-11,WARNING,BHARTIARTL,2021-03,tax_percentage,Tax rate out of expected range: 99.0%
+DQ-11,WARNING,BHEL,2016-03,tax_percentage,Tax rate out of expected range: -39.0%
+DQ-11,WARNING,BHEL,2018-03,tax_percentage,Tax rate out of expected range: 64.0%
+DQ-11,WARNING,BHEL,2020-03,tax_percentage,Tax rate out of expected range: 99.0%
+DQ-11,WARNING,BHEL,2021-03,tax_percentage,Tax rate out of expected range: -25.0%
+DQ-11,WARNING,BHEL,2024-03,tax_percentage,Tax rate out of expected range: -16.0%
+DQ-11,WARNING,CANBK,2016-03,tax_percentage,Tax rate out of expected range: -13.0%
+DQ-11,WARNING,CANBK,2018-03,tax_percentage,Tax rate out of expected range: -36.0%
+DQ-11,WARNING,CANBK,2019-03,tax_percentage,Tax rate out of expected range: -99.0%
+DQ-11,WARNING,DLF,2014-03,tax_percentage,Tax rate out of expected range: -16.0%
+DQ-11,WARNING,DLF,2020-03,tax_percentage,Tax rate out of expected range: 99.0%
+DQ-11,WARNING,DRREDDY,2020-03,tax_percentage,Tax rate out of expected range: -7.0%
+DQ-11,WARNING,GODREJCP,2019-03,tax_percentage,Tax rate out of expected range: -12.0%
+DQ-11,WARNING,GODREJCP,2024-03,tax_percentage,Tax rate out of expected range: 99.0%
+DQ-11,WARNING,GRASIM,2020-03,tax_percentage,Tax rate out of expected range: -1.0%
+DQ-11,WARNING,HDFCLIFE,2024-03,tax_percentage,Tax rate out of expected range: -61.0%
+DQ-11,WARNING,HINDALCO,2015-03,tax_percentage,Tax rate out of expected range: 75.0%
+DQ-11,WARNING,HINDALCO,2016-03,tax_percentage,Tax rate out of expected range: 99.0%
+DQ-11,WARNING,IOC,2020-03,tax_percentage,Tax rate out of expected range: -74.0%
+DQ-11,WARNING,IRFC,2013-03,tax_percentage,Tax rate out of expected range: 64.0%
+DQ-11,WARNING,JINDALSTEL,2015-03,tax_percentage,Tax rate out of expected range: -6.0%
+DQ-11,WARNING,JINDALSTEL,2016-03,tax_percentage,Tax rate out of expected range: -22.0%
+DQ-11,WARNING,JINDALSTEL,2017-03,tax_percentage,Tax rate out of expected range: -17.0%
+DQ-11,WARNING,JINDALSTEL,2018-03,tax_percentage,Tax rate out of expected range: -13.0%
+DQ-11,WARNING,JINDALSTEL,2019-03,tax_percentage,Tax rate out of expected range: -14.0%
+DQ-11,WARNING,JSWENERGY,2018-03,tax_percentage,Tax rate out of expected range: 75.0%
+DQ-11,WARNING,JSWSTEEL,2014-03,tax_percentage,Tax rate out of expected range: 70.0%
+DQ-11,WARNING,JSWSTEEL,2016-03,tax_percentage,Tax rate out of expected range: -80.0%
+DQ-11,WARNING,JSWSTEEL,2020-03,tax_percentage,Tax rate out of expected range: -30.0%
+DQ-11,WARNING,LICI,2019-03,tax_percentage,Tax rate out of expected range: 68.0%
+DQ-11,WARNING,LICI,2020-03,tax_percentage,Tax rate out of expected range: 80.0%
+DQ-11,WARNING,LICI,2021-03,tax_percentage,Tax rate out of expected range: 76.0%
+DQ-11,WARNING,LICI,2022-03,tax_percentage,Tax rate out of expected range: 66.0%
+DQ-11,WARNING,LODHA,2021-03,tax_percentage,Tax rate out of expected range: -44.0%
+DQ-11,WARNING,LODHA,2023-03,tax_percentage,Tax rate out of expected range: -8.0%
+DQ-11,WARNING,M&M,2020-03,tax_percentage,Tax rate out of expected range: 99.0%
+DQ-11,WARNING,MOTHERSON,2020-03,tax_percentage,Tax rate out of expected range: -5.0%
+DQ-11,WARNING,NAUKRI,2015-03,tax_percentage,Tax rate out of expected range: 99.0%
+DQ-11,WARNING,NAUKRI,2017-03,tax_percentage,Tax rate out of expected range: 99.0%
+DQ-11,WARNING,NAUKRI,2020-03,tax_percentage,Tax rate out of expected range: 95.0%
+DQ-11,WARNING,NAUKRI,2023-03,tax_percentage,Tax rate out of expected range: 99.0%
+DQ-11,WARNING,NHPC,2020-03,tax_percentage,Tax rate out of expected range: -2.0%
+DQ-11,WARNING,NHPC,2022-03,tax_percentage,Tax rate out of expected range: -17.0%
+DQ-11,WARNING,NTPC,2016-03,tax_percentage,Tax rate out of expected range: -2.0%
+DQ-11,WARNING,NTPC,2019-03,tax_percentage,Tax rate out of expected range: -25.0%
+DQ-11,WARNING,PNB,2016-03,tax_percentage,Tax rate out of expected range: -31.0%
+DQ-11,WARNING,PNB,2018-03,tax_percentage,Tax rate out of expected range: -37.0%
+DQ-11,WARNING,PNB,2019-03,tax_percentage,Tax rate out of expected range: -35.0%
+DQ-11,WARNING,POWERGRID,2019-03,tax_percentage,Tax rate out of expected range: -10.0%
+DQ-11,WARNING,SBIN,2017-03,tax_percentage,Tax rate out of expected range: 99.0%
+DQ-11,WARNING,SBIN,2018-03,tax_percentage,Tax rate out of expected range: -66.0%
+DQ-11,WARNING,SHREECEM,2015-06,tax_percentage,Tax rate out of expected range: -6.0%
+DQ-11,WARNING,TATACONSUM,2016-03,tax_percentage,Tax rate out of expected range: 99.0%
+DQ-11,WARNING,TATAMOTORS,2019-03,tax_percentage,Tax rate out of expected range: -8.0%
+DQ-11,WARNING,TATAMOTORS,2024-03,tax_percentage,Tax rate out of expected range: -14.0%
+DQ-11,WARNING,TATAPOWER,2013-03,tax_percentage,Tax rate out of expected range: 92.0%
+DQ-11,WARNING,TATAPOWER,2014-03,tax_percentage,Tax rate out of expected range: 99.0%
+DQ-11,WARNING,TATAPOWER,2015-03,tax_percentage,Tax rate out of expected range: 72.0%
+DQ-11,WARNING,TATASTEEL,2013-03,tax_percentage,Tax rate out of expected range: 78.0%
+DQ-11,WARNING,TATASTEEL,2015-03,tax_percentage,Tax rate out of expected range: 99.0%
+DQ-11,WARNING,TATASTEEL,2016-03,tax_percentage,Tax rate out of expected range: 99.0%
+DQ-11,WARNING,TATASTEEL,2017-03,tax_percentage,Tax rate out of expected range: 99.0%
+DQ-11,WARNING,TATASTEEL,2020-03,tax_percentage,Tax rate out of expected range: -99.0%
+DQ-11,WARNING,TATASTEEL,2024-03,tax_percentage,Tax rate out of expected range: 99.0%
+DQ-11,WARNING,TRENT,2013-03,tax_percentage,Tax rate out of expected range: 99.0%
+DQ-11,WARNING,TRENT,2014-03,tax_percentage,Tax rate out of expected range: 99.0%
+DQ-11,WARNING,TRENT,2021-03,tax_percentage,Tax rate out of expected range: -12.0%
+DQ-11,WARNING,TRENT,2022-03,tax_percentage,Tax rate out of expected range: 69.0%
+DQ-11,WARNING,INDIGO,2019-03,tax_percentage,Tax rate out of expected range: -99.0%
+DQ-11,WARNING,INDIGO,2020-03,tax_percentage,Tax rate out of expected range: -10.0%
+DQ-11,WARNING,INDIGO,2024-03,tax_percentage,Tax rate out of expected range: -2.0%
+DQ-12,WARNING,BHARTIARTL,2019-03,dividend_payout,Dividend payout exceeds 200%: 244.0%
+DQ-12,WARNING,BRITANNIA,2021-03,dividend_payout,Dividend payout exceeds 200%: 204.0%
+DQ-12,WARNING,M&M,2020-03,dividend_payout,Dividend payout exceeds 200%: 205.0%
+DQ-12,WARNING,SBIN,2017-03,dividend_payout,Dividend payout exceeds 200%: 859.0%
+DQ-12,WARNING,TATAPOWER,2015-03,dividend_payout,Dividend payout exceeds 200%: 210.0%
+DQ-13,INFO,GODREJCP,2018,Annual_Report,"URL returned 403 (likely bot-blocked by server, not necessarily broken): https://www.bseindia.com/bseplus/AnnualReport/532424/5324240318.pdf"
+DQ-13,INFO,NHPC,2023,Annual_Report,"URL returned 403 (likely bot-blocked by server, not necessarily broken): https://www.bseindia.com/xml-data/corpfiling/AttachHis/da3b3d90-81a9-4839-9a4c-3caedb6497f4.pdf"
+DQ-13,INFO,ADANIGREEN,2019,Annual_Report,"URL returned 403 (likely bot-blocked by server, not necessarily broken): https://www.bseindia.com/bseplus/AnnualReport/541450/5414500319.pdf"
+DQ-13,INFO,BAJAJHLDNG,2013,Annual_Report,"URL returned 403 (likely bot-blocked by server, not necessarily broken): https://www.bseindia.com/bseplus/AnnualReport/500490/5004900313.pdf"
+DQ-13,INFO,HINDALCO,2014,Annual_Report,"URL returned 403 (likely bot-blocked by server, not necessarily broken): https://www.bseindia.com/bseplus/AnnualReport/500440/5004400314.pdf"
+DQ-13,INFO,INFY,2023,Annual_Report,"URL returned 403 (likely bot-blocked by server, not necessarily broken): https://www.bseindia.com/xml-data/corpfiling/AttachHis//3ba3c011-0411-49ba-a250-f746a5b9d940.pdf"
+DQ-13,INFO,CHOLAFIN,2013,Annual_Report,"URL returned 403 (likely bot-blocked by server, not necessarily broken): https://www.bseindia.com/bseplus/AnnualReport/511243/5112430313.pdf"
+DQ-13,INFO,INFY,2012,Annual_Report,"URL returned 403 (likely bot-blocked by server, not necessarily broken): https://www.bseindia.com/bseplus/AnnualReport/500209/5002090312.pdf"
+DQ-13,INFO,BAJAJ-AUTO,2018,Annual_Report,"URL returned 403 (likely bot-blocked by server, not necessarily broken): https://www.bseindia.com/bseplus/AnnualReport/532977/5329770318.pdf"
+DQ-13,INFO,AXISBANK,2014,Annual_Report,"URL returned 403 (likely bot-blocked by server, not necessarily broken): https://www.bseindia.com/bseplus/AnnualReport/532215/5322150314.pdf"
+DQ-13,INFO,ITC,2021,Annual_Report,"URL returned 403 (likely bot-blocked by server, not necessarily broken): https://www.bseindia.com/bseplus/AnnualReport/500875/68921500875.pdf"
+DQ-13,INFO,BAJAJ-AUTO,2012,Annual_Report,"URL returned 403 (likely bot-blocked by server, not necessarily broken): https://www.bseindia.com/bseplus/AnnualReport/532977/5329770312.pdf"
+DQ-13,INFO,INFY,2020,Annual_Report,"URL returned 403 (likely bot-blocked by server, not necessarily broken): https://www.bseindia.com/bseplus/AnnualReport/500209/5002090320.pdf"
+DQ-13,INFO,HAVELLS,2021,Annual_Report,"URL returned 403 (likely bot-blocked by server, not necessarily broken): https://www.bseindia.com/bseplus/AnnualReport/517354/68504517354_14_09_21.pdf"
+DQ-13,INFO,BAJAJHLDNG,2021,Annual_Report,"URL returned 403 (likely bot-blocked by server, not necessarily broken): https://www.bseindia.com/bseplus/AnnualReport/500490/68686500490.pdf"
+DQ-13,INFO,TATAMOTORS,2019,Annual_Report,"URL returned 403 (likely bot-blocked by server, not necessarily broken): https://www.bseindia.com/bseplus/AnnualReport/500570/5005700319.pdf"
+DQ-13,INFO,NAUKRI,2024,Annual_Report,"URL returned 403 (likely bot-blocked by server, not necessarily broken): https://www.bseindia.com/xml-data/corpfiling/AttachHis/5e8272b8-c8e1-4090-b74f-e0081127cc5b.pdf"
+DQ-13,INFO,BANKBARODA,2022,Annual_Report,"URL returned 403 (likely bot-blocked by server, not necessarily broken): https://www.bseindia.com/bseplus/AnnualReport/532134/73079532134_23_09_22.pdf"
+DQ-13,INFO,EICHERMOT,2014,Annual_Report,"URL returned 403 (likely bot-blocked by server, not necessarily broken): https://www.bseindia.com/bseplus/AnnualReport/505200/5052001214.pdf"
+DQ-13,INFO,BOSCHLTD,2016,Annual_Report,"URL returned 403 (likely bot-blocked by server, not necessarily broken): https://www.bseindia.com/bseplus/AnnualReport/500530/5005300316.pdf"
+DQ-13,INFO,GODREJCP,2023,Annual_Report,"URL returned 403 (likely bot-blocked by server, not necessarily broken): https://www.bseindia.com/xml-data/corpfiling/AttachHis//5832fc49-7be6-4ab2-ac1f-e570fbe601eb.pdf"
+DQ-13,INFO,INFY,2013,Annual_Report,"URL returned 403 (likely bot-blocked by server, not necessarily broken): https://www.bseindia.com/bseplus/AnnualReport/500209/5002090313.pdf"
+DQ-13,INFO,COALINDIA,2017,Annual_Report,"URL returned 403 (likely bot-blocked by server, not necessarily broken): https://www.bseindia.com/bseplus/AnnualReport/533278/5332780317.pdf"
+DQ-13,INFO,NESTLEIND,2009,Annual_Report,"URL returned 403 (likely bot-blocked by server, not necessarily broken): https://www.bseindia.com/HIS_ANN_RPT/HISTANNR/2009/NESTLE_INDIA_LTD-500790-DECEMBER-2009.PDF"
+DQ-13,INFO,COALINDIA,2014,Annual_Report,"URL returned 403 (likely bot-blocked by server, not necessarily broken): https://www.bseindia.com/bseplus/AnnualReport/533278/5332780314.pdf"
+DQ-13,INFO,ICICIGI,2021,Annual_Report,"URL returned 403 (likely bot-blocked by server, not necessarily broken): https://www.bseindia.com/bseplus/AnnualReport/540716/69010540716.pdf"
+DQ-13,INFO,ZYDUSLIFE,2011,Annual_Report,"URL returned 403 (likely bot-blocked by server, not necessarily broken): https://www.bseindia.com/bseplus/AnnualReport/532321/5323210311.pdf"
+DQ-13,INFO,NTPC,2016,Annual_Report,"URL returned 403 (likely bot-blocked by server, not necessarily broken): https://www.bseindia.com/bseplus/AnnualReport/532555/5325550316.pdf"
+DQ-13,INFO,APOLLOHOSP,2014,Annual_Report,"URL returned 403 (likely bot-blocked by server, not necessarily broken): https://www.bseindia.com/bseplus/AnnualReport/508869/5088690314.pdf"
+DQ-13,INFO,BRITANNIA,2023,Annual_Report,"URL returned 403 (likely bot-blocked by server, not necessarily broken): https://www.bseindia.com/xml-data/corpfiling/AttachHis//28eb09ef-a4a7-49b3-9d07-6232648f81f8.pdf"
+DQ-13,INFO,HEROMOTOCO,2022,Annual_Report,"URL returned 403 (likely bot-blocked by server, not necessarily broken): https://www.bseindia.com/bseplus/AnnualReport/500182/73731500182_19_07_22.pdf"
+DQ-13,INFO,CHOLAFIN,2018,Annual_Report,"URL returned 403 (likely bot-blocked by server, not necessarily broken): https://www.bseindia.com/bseplus/AnnualReport/511243/5112430318.pdf"
+DQ-13,INFO,BHEL,2020,Annual_Report,"URL returned 403 (likely bot-blocked by server, not necessarily broken): https://www.bseindia.com/bseplus/AnnualReport/500103/66171500103.pdf"
+DQ-13,INFO,KOTAKBANK,2020,Annual_Report,"URL returned 403 (likely bot-blocked by server, not necessarily broken): https://www.bseindia.com/bseplus/AnnualReport/500247/5002470320.pdf"
+DQ-13,INFO,RECLTD,2012,Annual_Report,"URL returned 403 (likely bot-blocked by server, not necessarily broken): https://www.bseindia.com/bseplus/AnnualReport/532955/5329550312.pdf"
+DQ-13,INFO,GRASIM,2024,Annual_Report,"URL returned 403 (likely bot-blocked by server, not necessarily broken): https://www.bseindia.com/xml-data/corpfiling/AttachHis/75634dc7-b3e7-4ad8-8a6e-9fdb0197c4af.pdf"
+DQ-13,INFO,MOTHERSON,2021,Annual_Report,"URL returned 403 (likely bot-blocked by server, not necessarily broken): https://www.bseindia.com/bseplus/AnnualReport/517334/69792517334.pdf"
+DQ-13,INFO,TATASTEEL,2018,Annual_Report,"URL returned 403 (likely bot-blocked by server, not necessarily broken): https://www.bseindia.com/bseplus/AnnualReport/500470/5004700318.pdf"
+DQ-13,INFO,M&M,2024,Annual_Report,"URL returned 403 (likely bot-blocked by server, not necessarily broken): https://www.bseindia.com/xml-data/corpfiling/AttachHis/09ee6a86-fe09-444c-baf3-b7e68b0775ee.pdf"
+DQ-13,INFO,EICHERMOT,2023,Annual_Report,"URL returned 403 (likely bot-blocked by server, not necessarily broken): https://www.bseindia.com/xml-data/corpfiling/AttachHis//857d13f1-9d43-4eac-b527-ed0df0099697.pdf"
+DQ-13,INFO,ADANIGREEN,2018,Annual_Report,"URL returned 403 (likely bot-blocked by server, not necessarily broken): https://www.bseindia.com/bseplus/AnnualReport/541450/5414500318.pdf"
+DQ-13,INFO,PNB,2023,Annual_Report,"URL returned 403 (likely bot-blocked by server, not necessarily broken): https://www.bseindia.com/xml-data/corpfiling/AttachHis//01b4a055-de00-4725-acb2-3925a86b10f0.pdf"
+DQ-13,WARNING,KOTAKBANK,2011,Annual_Report,Malformed URL (missing http/https prefix): 5002470311.pdf
+DQ-13,INFO,DRREDDY,2018,Annual_Report,"URL returned 403 (likely bot-blocked by server, not necessarily broken): https://www.bseindia.com/bseplus/AnnualReport/500124/5001240318.pdf"
+DQ-13,INFO,TRENT,2013,Annual_Report,"URL returned 403 (likely bot-blocked by server, not necessarily broken): https://www.bseindia.com/bseplus/AnnualReport/500251/5002510313.pdf"
+DQ-13,INFO,SUNPHARMA,2018,Annual_Report,"URL returned 403 (likely bot-blocked by server, not necessarily broken): https://www.bseindia.com/bseplus/AnnualReport/524715/5247150318.pdf"
+DQ-13,INFO,BHEL,2021,Annual_Report,"URL returned 403 (likely bot-blocked by server, not necessarily broken): https://www.bseindia.com/bseplus/AnnualReport/500103/70082500103.pdf"
+DQ-13,INFO,HEROMOTOCO,2015,Annual_Report,"URL returned 403 (likely bot-blocked by server, not necessarily broken): https://www.bseindia.com/bseplus/AnnualReport/500182/5001820315.pdf"
+DQ-13,INFO,APOLLOHOSP,2021,Annual_Report,"URL returned 403 (likely bot-blocked by server, not necessarily broken): https://www.bseindia.com/bseplus/AnnualReport/508869/69378508869.pdf"
+DQ-13,INFO,SHRIRAMFIN,2017,Annual_Report,"URL returned 403 (likely bot-blocked by server, not necessarily broken): https://www.bseindia.com/bseplus/AnnualReport/511218/5112180317.pdf"
+DQ-14,WARNING,JSWENERGY,2018-03,eps,EPS sign mismatch: net_profit=85 (positive) but eps=0.0
+DQ-14,WARNING,TATAPOWER,2013-03,eps,EPS sign mismatch: net_profit=123 (positive) but eps=0.0
+DQ-14,WARNING,TATAPOWER,2014-03,eps,EPS sign mismatch: net_profit=12 (positive) but eps=-1.0
+DQ-16,WARNING,JIOFIN,,year_coverage,Only 2 years of profitandloss history (< 5 minimum)
