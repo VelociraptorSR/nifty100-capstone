@@ -158,6 +158,7 @@ if __name__ == "__main__":
     from src.etl.validator import (
         deduplicate_annual_table, deduplicate_documents,
         deduplicate_financial_ratios, exclude_orphan_rows,
+        flag_conflicting_duplicates,
     )
 
     tables = init_db()
@@ -191,7 +192,9 @@ if __name__ == "__main__":
     # --- cashflow ---
     cf_raw = load_cashflow()
     rows_in = len(cf_raw)
-    cf, _ = deduplicate_annual_table(cf_raw, "cashflow")
+    cf_value_cols = ["operating_activity", "investing_activity", "financing_activity", "net_cash_flow"]
+    cf, conflict_log = flag_conflicting_duplicates(cf_raw, "cashflow", cf_value_cols, keep="first")
+    cf, _ = deduplicate_annual_table(cf, "cashflow")
     cf, _ = exclude_orphan_rows(cf, companies, "cashflow")
     audit_rows.append(load_and_track(conn, cf, insert_cashflow, "cashflow", rows_in))
 

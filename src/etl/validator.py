@@ -133,6 +133,47 @@ def deduplicate_financial_ratios(fr_df):
     return clean_df, dedup_log
 
 
+def flag_conflicting_duplicates(df, table_name, value_columns, keep="first"):
+    """Detect duplicate (company_id, year) rows where VALUES genuinely
+    disagree (not just exact copies) — a more serious issue than simple
+    duplication, since we cannot algorithmically determine which row is
+    correct. Logs as CRITICAL and removes only the conflicting rows
+    (keeping one per group), leaving simple identical duplicates
+    untouched for deduplicate_annual_table() to handle separately.
+    """
+    df = df.copy()
+    dupe_groups = df[df.duplicated(subset=["company_id", "year"], keep=False)]
+
+    violations = []
+    conflicting_keys = set()
+
+    for (cid, year), group in dupe_groups.groupby(["company_id", "year"]):
+        distinct_value_sets = group[value_columns].drop_duplicates()
+        if len(distinct_value_sets) > 1:
+            conflicting_keys.add((cid, year))
+            violations.append(_violation(
+                "DQ-02-CONFLICT", "CRITICAL", cid, year,
+                "+".join(value_columns),
+                f"UNRESOLVED CONFLICT in {table_name}: {len(group)} rows for "
+                f"({cid}, {year}) have genuinely different values across "
+                f"{value_columns} — cannot auto-resolve, needs manual review "
+                f"against source. Kept '{keep}' occurrence arbitrarily."
+            ))
+
+    if not conflicting_keys:
+        return df, violations
+
+    is_conflicting = df.apply(lambda row: (row["company_id"], row["year"]) in conflicting_keys, axis=1)
+    conflicting_rows = df[is_conflicting]
+    non_conflicting_rows = df[~is_conflicting]
+
+    dupes_mask = conflicting_rows.duplicated(subset=["company_id", "year"], keep=keep)
+    resolved_conflicting = conflicting_rows[~dupes_mask]
+
+    clean_df = pd.concat([non_conflicting_rows, resolved_conflicting]).sort_index().reset_index(drop=True)
+    return clean_df, violations
+
+
 def deduplicate_annual_table(df, table_name):
     """DQ-02 remediation: remove duplicate (company_id, year) rows.
 
@@ -152,6 +193,7 @@ def deduplicate_annual_table(df, table_name):
 
     clean_df = df[~dupes_mask].reset_index(drop=True)
     return clean_df, dedup_log
+
 
 
 def check_dq07_year_format(df, table_name):
@@ -428,6 +470,9 @@ def run_all_dq_checks(companies, pl, bs, cf, documents, sectors):
     bs, orphan_log_bs = exclude_orphan_rows(bs, companies, "balancesheet")
     all_violations += orphan_log_bs
 
+    cf_value_cols = ["operating_activity", "investing_activity", "financing_activity", "net_cash_flow"]
+    cf, conflict_log_cf = flag_conflicting_duplicates(cf, "cashflow", cf_value_cols, keep="first")
+    all_violations += conflict_log_cf
     cf, dedup_log_cf = deduplicate_annual_table(cf, "cashflow")
     all_violations += dedup_log_cf
     cf, orphan_log_cf = exclude_orphan_rows(cf, companies, "cashflow")

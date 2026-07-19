@@ -283,6 +283,17 @@ DQ-03,CRITICAL,ULTRACEMCO,2022-03,company_id,Excluded orphan row from balanceshe
 DQ-03,CRITICAL,ULTRACEMCO,2023-03,company_id,Excluded orphan row from balancesheet — company_id not in master companies table
 DQ-03,CRITICAL,ULTRACEMCO,2024-03,company_id,Excluded orphan row from balancesheet — company_id not in master companies table
 DQ-03,CRITICAL,ULTRACEMCO,2024-09,company_id,Excluded orphan row from balancesheet — company_id not in master companies table
+DQ-02-CONFLICT,CRITICAL,ABB,2014-03,operating_activity+investing_activity+financing_activity+net_cash_flow,"UNRESOLVED CONFLICT in cashflow: 2 rows for (ABB, 2014-03) have genuinely different values across ['operating_activity', 'investing_activity', 'financing_activity', 'net_cash_flow'] — cannot auto-resolve, needs manual review against source. Kept 'first' occurrence arbitrarily."
+DQ-02-CONFLICT,CRITICAL,ABB,2015-03,operating_activity+investing_activity+financing_activity+net_cash_flow,"UNRESOLVED CONFLICT in cashflow: 2 rows for (ABB, 2015-03) have genuinely different values across ['operating_activity', 'investing_activity', 'financing_activity', 'net_cash_flow'] — cannot auto-resolve, needs manual review against source. Kept 'first' occurrence arbitrarily."
+DQ-02-CONFLICT,CRITICAL,ABB,2016-03,operating_activity+investing_activity+financing_activity+net_cash_flow,"UNRESOLVED CONFLICT in cashflow: 2 rows for (ABB, 2016-03) have genuinely different values across ['operating_activity', 'investing_activity', 'financing_activity', 'net_cash_flow'] — cannot auto-resolve, needs manual review against source. Kept 'first' occurrence arbitrarily."
+DQ-02-CONFLICT,CRITICAL,ABB,2017-03,operating_activity+investing_activity+financing_activity+net_cash_flow,"UNRESOLVED CONFLICT in cashflow: 2 rows for (ABB, 2017-03) have genuinely different values across ['operating_activity', 'investing_activity', 'financing_activity', 'net_cash_flow'] — cannot auto-resolve, needs manual review against source. Kept 'first' occurrence arbitrarily."
+DQ-02-CONFLICT,CRITICAL,ABB,2018-03,operating_activity+investing_activity+financing_activity+net_cash_flow,"UNRESOLVED CONFLICT in cashflow: 2 rows for (ABB, 2018-03) have genuinely different values across ['operating_activity', 'investing_activity', 'financing_activity', 'net_cash_flow'] — cannot auto-resolve, needs manual review against source. Kept 'first' occurrence arbitrarily."
+DQ-02-CONFLICT,CRITICAL,ABB,2019-03,operating_activity+investing_activity+financing_activity+net_cash_flow,"UNRESOLVED CONFLICT in cashflow: 2 rows for (ABB, 2019-03) have genuinely different values across ['operating_activity', 'investing_activity', 'financing_activity', 'net_cash_flow'] — cannot auto-resolve, needs manual review against source. Kept 'first' occurrence arbitrarily."
+DQ-02-CONFLICT,CRITICAL,ABB,2020-03,operating_activity+investing_activity+financing_activity+net_cash_flow,"UNRESOLVED CONFLICT in cashflow: 2 rows for (ABB, 2020-03) have genuinely different values across ['operating_activity', 'investing_activity', 'financing_activity', 'net_cash_flow'] — cannot auto-resolve, needs manual review against source. Kept 'first' occurrence arbitrarily."
+DQ-02-CONFLICT,CRITICAL,ABB,2021-03,operating_activity+investing_activity+financing_activity+net_cash_flow,"UNRESOLVED CONFLICT in cashflow: 2 rows for (ABB, 2021-03) have genuinely different values across ['operating_activity', 'investing_activity', 'financing_activity', 'net_cash_flow'] — cannot auto-resolve, needs manual review against source. Kept 'first' occurrence arbitrarily."
+DQ-02-CONFLICT,CRITICAL,ABB,2022-03,operating_activity+investing_activity+financing_activity+net_cash_flow,"UNRESOLVED CONFLICT in cashflow: 2 rows for (ABB, 2022-03) have genuinely different values across ['operating_activity', 'investing_activity', 'financing_activity', 'net_cash_flow'] — cannot auto-resolve, needs manual review against source. Kept 'first' occurrence arbitrarily."
+DQ-02-CONFLICT,CRITICAL,ABB,2023-03,operating_activity+investing_activity+financing_activity+net_cash_flow,"UNRESOLVED CONFLICT in cashflow: 2 rows for (ABB, 2023-03) have genuinely different values across ['operating_activity', 'investing_activity', 'financing_activity', 'net_cash_flow'] — cannot auto-resolve, needs manual review against source. Kept 'first' occurrence arbitrarily."
+DQ-02-CONFLICT,CRITICAL,ABB,2024-03,operating_activity+investing_activity+financing_activity+net_cash_flow,"UNRESOLVED CONFLICT in cashflow: 2 rows for (ABB, 2024-03) have genuinely different values across ['operating_activity', 'investing_activity', 'financing_activity', 'net_cash_flow'] — cannot auto-resolve, needs manual review against source. Kept 'first' occurrence arbitrarily."
 DQ-02,CRITICAL,TCS,2013-03,company_id+year,Removed duplicate row from cashflow (kept last occurrence)
 DQ-02,CRITICAL,TCS,2014-03,company_id+year,Removed duplicate row from cashflow (kept last occurrence)
 DQ-02,CRITICAL,TCS,2015-03,company_id+year,Removed duplicate row from cashflow (kept last occurrence)
@@ -295,17 +306,6 @@ DQ-02,CRITICAL,TCS,2021-03,company_id+year,Removed duplicate row from cashflow (
 DQ-02,CRITICAL,TCS,2022-03,company_id+year,Removed duplicate row from cashflow (kept last occurrence)
 DQ-02,CRITICAL,TCS,2023-03,company_id+year,Removed duplicate row from cashflow (kept last occurrence)
 DQ-02,CRITICAL,TCS,2024-03,company_id+year,Removed duplicate row from cashflow (kept last occurrence)
-DQ-02,CRITICAL,ABB,2014-03,company_id+year,Removed duplicate row from cashflow (kept last occurrence)
-DQ-02,CRITICAL,ABB,2015-03,company_id+year,Removed duplicate row from cashflow (kept last occurrence)
-DQ-02,CRITICAL,ABB,2016-03,company_id+year,Removed duplicate row from cashflow (kept last occurrence)
-DQ-02,CRITICAL,ABB,2017-03,company_id+year,Removed duplicate row from cashflow (kept last occurrence)
-DQ-02,CRITICAL,ABB,2018-03,company_id+year,Removed duplicate row from cashflow (kept last occurrence)
-DQ-02,CRITICAL,ABB,2019-03,company_id+year,Removed duplicate row from cashflow (kept last occurrence)
-DQ-02,CRITICAL,ABB,2020-03,company_id+year,Removed duplicate row from cashflow (kept last occurrence)
-DQ-02,CRITICAL,ABB,2021-03,company_id+year,Removed duplicate row from cashflow (kept last occurrence)
-DQ-02,CRITICAL,ABB,2022-03,company_id+year,Removed duplicate row from cashflow (kept last occurrence)
-DQ-02,CRITICAL,ABB,2023-03,company_id+year,Removed duplicate row from cashflow (kept last occurrence)
-DQ-02,CRITICAL,ABB,2024-03,company_id+year,Removed duplicate row from cashflow (kept last occurrence)
 DQ-02,CRITICAL,BAJAJ-AUTO,2013-03,company_id+year,Removed duplicate row from cashflow (kept last occurrence)
 DQ-02,CRITICAL,BAJAJ-AUTO,2014-03,company_id+year,Removed duplicate row from cashflow (kept last occurrence)
 DQ-02,CRITICAL,BAJAJ-AUTO,2015-03,company_id+year,Removed duplicate row from cashflow (kept last occurrence)
