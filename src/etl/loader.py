@@ -13,15 +13,11 @@ SUPPORTING_DIR = "data/supporting"
 
 
 def load_companies():
-    """Load companies.xlsx — the master company reference table.
-
-    Uses header=1 because row 0 of the source file is metadata, not
-    real column headers (per Section 5 of the project spec).
-    """
     path = f"{RAW_DIR}/companies.xlsx"
     df = pd.read_excel(path, header=1)
 
     df["id"] = df["id"].apply(normalize_ticker)
+    df["company_name"] = df["company_name"].str.strip()
 
     return df
 
