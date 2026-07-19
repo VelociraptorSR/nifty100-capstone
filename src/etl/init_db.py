@@ -158,7 +158,7 @@ if __name__ == "__main__":
     from src.etl.validator import (
         deduplicate_annual_table, deduplicate_documents,
         deduplicate_financial_ratios, exclude_orphan_rows,
-        flag_conflicting_duplicates,
+        flag_conflicting_duplicates, remove_unparseable_years,
     )
 
     tables = init_db()
@@ -175,20 +175,22 @@ if __name__ == "__main__":
     sectors = load_sectors()
     audit_rows.append(load_and_track(conn, sectors, insert_sectors, "sectors", len(sectors)))
 
-    # --- profitandloss ---
+   # --- profitandloss ---
     pl_raw = load_profitandloss()
     rows_in = len(pl_raw)
     pl, _ = deduplicate_annual_table(pl_raw, "profitandloss")
     pl, _ = exclude_orphan_rows(pl, companies, "profitandloss")
+    pl, _ = remove_unparseable_years(pl, "profitandloss")
     audit_rows.append(load_and_track(conn, pl, insert_profitandloss, "profitandloss", rows_in))
 
-    # --- balancesheet ---
+   # --- balancesheet ---
     bs_raw = load_balancesheet()
     rows_in = len(bs_raw)
     bs, _ = deduplicate_annual_table(bs_raw, "balancesheet")
     bs, _ = exclude_orphan_rows(bs, companies, "balancesheet")
+    bs, _ = remove_unparseable_years(bs, "balancesheet")
     audit_rows.append(load_and_track(conn, bs, insert_balancesheet, "balancesheet", rows_in))
-
+    
     # --- cashflow ---
     cf_raw = load_cashflow()
     rows_in = len(cf_raw)
@@ -196,6 +198,7 @@ if __name__ == "__main__":
     cf, conflict_log = flag_conflicting_duplicates(cf_raw, "cashflow", cf_value_cols, keep="first")
     cf, _ = deduplicate_annual_table(cf, "cashflow")
     cf, _ = exclude_orphan_rows(cf, companies, "cashflow")
+    cf, _ = remove_unparseable_years(cf, "cashflow")
     audit_rows.append(load_and_track(conn, cf, insert_cashflow, "cashflow", rows_in))
 
     # --- analysis ---

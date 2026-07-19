@@ -502,3 +502,25 @@ def save_validation_failures(violations, output_path="output/validation_failures
     df = pd.DataFrame(violations)
     df.to_csv(output_path, index=False)
     return output_path
+
+
+def remove_unparseable_years(df, table_name):
+    """DQ-07 remediation: remove rows where year could not be parsed.
+
+    TTM rows are NOT removed here (they are valid data, just not a
+    fixed fiscal year) — downstream modules must explicitly exclude
+    TTM when doing year-based calculations like CAGR.
+    """
+    bad_mask = df["year"] == "PARSE_ERROR"
+    removed = df[bad_mask]
+
+    removal_log = []
+    for _, row in removed.iterrows():
+        removal_log.append(_violation(
+            "DQ-07", "CRITICAL", row["company_id"], row["year"],
+            "year",
+            f"Removed unparseable year row from {table_name}"
+        ))
+
+    clean_df = df[~bad_mask].reset_index(drop=True)
+    return clean_df, removal_log
