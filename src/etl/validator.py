@@ -79,6 +79,60 @@ def exclude_orphan_rows(child_df, companies_df, table_name):
     return clean_df, exclusion_log
 
 
+def deduplicate_documents(documents_df):
+    """DQ-02 remediation, specialised for documents table.
+
+    Unlike deduplicate_annual_table() which blindly keeps the last row,
+    this prefers the row with a non-null Annual_Report URL when a
+    (company_id, Year) duplicate exists — since these duplicates are
+    typically a blank placeholder row alongside a completed one.
+    """
+    df = documents_df.copy()
+    df["_has_url"] = df["Annual_Report"].notna()
+    df = df.sort_values("_has_url", ascending=True)
+
+    dupes_mask = df.duplicated(subset=["company_id", "Year"], keep="last")
+    removed = df[dupes_mask]
+
+    dedup_log = []
+    for _, row in removed.iterrows():
+        dedup_log.append(_violation(
+            "DQ-02", "CRITICAL", row["company_id"], row["Year"],
+            "company_id+Year",
+            "Removed duplicate documents row (kept the one with a valid URL)"
+        ))
+
+    clean_df = df[~dupes_mask].drop(columns=["_has_url"]).reset_index(drop=True)
+    return clean_df, dedup_log
+
+
+def deduplicate_financial_ratios(fr_df):
+    """DQ-02 remediation, specialised for financial_ratios table.
+
+    Some duplicate (company_id, year) rows here have genuinely conflicting
+    values (not identical copies) — most commonly in cash_from_operations_cr.
+    Since this table is provisional (overwritten by the Sprint 2 Ratio Engine),
+    we keep the first occurrence and log the conflicting value for transparency
+    rather than attempting to guess which is correct.
+    """
+    df = fr_df.copy()
+    dupes_mask = df.duplicated(subset=["company_id", "year"], keep="first")
+    removed = df[dupes_mask]
+
+    dedup_log = []
+    for _, row in removed.iterrows():
+        dedup_log.append(_violation(
+            "DQ-02", "CRITICAL", row["company_id"], row["year"],
+            "company_id+year",
+            f"Removed conflicting duplicate row from financial_ratios "
+            f"(kept first occurrence; dropped row had "
+            f"cash_from_operations_cr={row['cash_from_operations_cr']})"
+        ))
+
+    clean_df = df[~dupes_mask].reset_index(drop=True)
+    return clean_df, dedup_log
+
+
 def deduplicate_annual_table(df, table_name):
     """DQ-02 remediation: remove duplicate (company_id, year) rows.
 
