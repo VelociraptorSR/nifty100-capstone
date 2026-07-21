@@ -83,3 +83,87 @@ def compute_roa(row):
     if pd.isna(total_assets) or total_assets == 0:
         return None
     return (net_profit / total_assets) * 100
+
+
+def compute_debt_to_equity(row):
+    """D/E = borrowings / (equity_capital + reserves).
+
+    Returns 0 (not None) if borrowings = 0 — debt-free is a valid,
+    meaningful result, not an undefined one.
+    """
+    borrowings = row["borrowings"]
+    equity = row["equity_capital"] + row["reserves"]
+
+    if pd.isna(borrowings) or borrowings == 0:
+        return 0
+
+    if pd.isna(equity) or equity <= 0:
+        return None
+
+    return borrowings / equity
+
+
+def compute_high_leverage_flag(de_ratio, broad_sector):
+    """True if D/E > 5 AND company is NOT in Financials sector.
+
+    High D/E is structurally normal for banks/NBFCs (their business model
+    is built on leverage), so the flag is suppressed for that sector.
+    """
+    if de_ratio is None:
+        return False
+    if broad_sector == "Financials":
+        return False
+    return de_ratio > 5
+
+
+def compute_interest_coverage(row):
+    """ICR = (operating_profit + other_income) / interest.
+
+    Returns None if interest = 0 — but this is a GOOD outcome (debt-free),
+    so a separate icr_label column stores 'Debt Free' for display.
+    """
+    interest = row["interest"]
+    op_profit = row["operating_profit"]
+    other_income = row["other_income"] if pd.notna(row["other_income"]) else 0
+
+    if pd.isna(interest) or interest == 0:
+        return None
+
+    return (op_profit + other_income) / interest
+
+
+def compute_icr_label(icr_value, borrowings):
+    """Display label for ICR: 'Debt Free' when ICR is None due to zero
+    interest, otherwise a formatted numeric string.
+    """
+    if icr_value is None:
+        if borrowings == 0 or pd.isna(borrowings):
+            return "Debt Free"
+        return "N/A"
+    return f"{icr_value:.2f}x"
+
+
+def compute_icr_risk_flag(icr_value):
+    """True if ICR < 1.5 — company may struggle to cover interest payments.
+
+    None (debt-free) is never a risk, so it returns False, not True.
+    """
+    if icr_value is None:
+        return False
+    return icr_value < 1.5
+
+
+def compute_net_debt(row):
+    """Net Debt = borrowings - investments (investments as liquid asset proxy)."""
+    borrowings = row["borrowings"] if pd.notna(row["borrowings"]) else 0
+    investments = row["investments"] if pd.notna(row["investments"]) else 0
+    return borrowings - investments
+
+
+def compute_asset_turnover(row):
+    """Asset Turnover = sales / total_assets. None if total_assets = 0."""
+    total_assets = row["total_assets"]
+    sales = row["sales"]
+    if pd.isna(total_assets) or total_assets == 0:
+        return None
+    return sales / total_assets
