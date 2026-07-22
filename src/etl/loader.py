@@ -17,7 +17,7 @@ def load_companies():
     df = pd.read_excel(path, header=1)
 
     df["id"] = df["id"].apply(normalize_ticker)
-    df["company_name"] = df["company_name"].str.strip()
+    df["company_name"] = df["company_name"].str.split("\n").str[0].str.strip()
 
     return df
 

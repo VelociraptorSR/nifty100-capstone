@@ -17,17 +17,15 @@ if __name__ == "__main__":
 
     ratios_df = compute_all_ratios(conn)
     write_financial_ratios(conn, ratios_df)
+    print("financial_ratios rows written:", len(ratios_df))
 
     companies_df = pd.read_sql("SELECT id, roce_percentage, roe_percentage FROM companies", conn)
     latest = get_latest_year_ratios(ratios_df)
 
     roce_anomalies = cross_check_roce(latest, companies_df)
     roe_anomalies = cross_check_roe(latest, companies_df)
-
-    path = generate_edge_case_log(roce_anomalies, roe_anomalies)
-    print("Saved:", path)
-    print("ROCE anomalies:", len(roce_anomalies))
-    print("ROE anomalies:", len(roe_anomalies))
+    generate_edge_case_log(roce_anomalies, roe_anomalies)
+    print("ROCE anomalies:", len(roce_anomalies), "| ROE anomalies:", len(roe_anomalies))
 
     conn.close()
     
