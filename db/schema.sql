@@ -153,6 +153,7 @@ CREATE TABLE IF NOT EXISTS financial_ratios (
     revenue_cagr_5yr REAL,
     pat_cagr_5yr REAL,
     eps_cagr_5yr REAL,
+    return_on_capital_employed_pct REAL,
     composite_quality_score REAL,
     PRIMARY KEY (company_id, year),
     FOREIGN KEY (company_id) REFERENCES companies(id)

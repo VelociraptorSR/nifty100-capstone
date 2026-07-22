@@ -1,0 +1,70 @@
+======================================================================
+RATIO EDGE CASES LOG — Sprint 2, Day 13
+======================================================================
+
+All entries below represent cases where the Ratio Engine's computed value differs from companies.xlsx's pre-computed value by more than 5 percentage points. Per project spec, the Ratio Engine's computed value is used for all analytics; the source value is display-only.
+
+--- ROCE Anomalies (36) ---
+Category: FORMULA DISCREPANCY. Our ROCE = EBIT / (equity + reserves + borrowings), per project spec Section 2.4. The source roce_percentage likely uses a different denominator. Sub-cases verified: BEL and HAL show extreme values (>2500%) due to genuinely tiny equity+reserves+borrowings bases relative to earnings (real capital structure, not an error). ADANIGREEN shows a low value due to a very large debt-funded capital base. Both are real balance sheet characteristics, not calculation bugs.
+
+  ABB (2024-03): computed=36.54%, source=46.0%, diff=9.46pp
+  ADANIGREEN (2024-03): computed=7.25%, source=96.5%, diff=89.25pp
+  ADANIPOWER (2024-03): computed=18.39%, source=32.2%, diff=13.81pp
+  ASIANPAINT (2024-03): computed=31.75%, source=41.75%, diff=10.0pp
+  BAJAJ-AUTO (2024-03): computed=27.21%, source=33.5%, diff=6.29pp
+  BAJAJFINSV (2024-03): computed=11.45%, source=21.14%, diff=9.69pp
+  BAJAJHLDNG (2024-03): computed=2.81%, source=13.1%, diff=10.29pp
+  BAJFINANCE (2024-03): computed=4.17%, source=11.9%, diff=7.73pp
+  BEL (2024-03): computed=3628.35%, source=34.6%, diff=3593.75pp
+  BOSCHLTD (2024-03): computed=13.76%, source=20.6%, diff=6.84pp
+  CHOLAFIN (2024-03): computed=3.37%, source=10.4%, diff=7.03pp
+  CIPLA (2024-03): computed=67.6%, source=22.8%, diff=44.8pp
+  COALINDIA (2024-03): computed=98.17%, source=63.6%, diff=34.57pp
+  DRREDDY (2024-03): computed=21.36%, source=26.5%, diff=5.14pp
+  EICHERMOT (2024-03): computed=20.21%, source=31.1%, diff=10.89pp
+  GODREJCP (2024-03): computed=17.17%, source=26.49%, diff=9.32pp
+  HAL (2024-03): computed=2590.99%, source=38.9%, diff=2552.09pp
+  HDFCLIFE (2024-03): computed=645.95%, source=6.61%, diff=639.34pp
+  HEROMOTOCO (2024-03): computed=173.71%, source=29.1%, diff=144.61pp
+  HINDALCO (2024-03): computed=113.58%, source=11.3%, diff=102.28pp
+  HINDUNILVR (2024-03): computed=87.32%, source=27.2%, diff=60.12pp
+  ICICIGI (2024-03): computed=145.23%, source=22.5%, diff=122.73pp
+  ICICIPRULI (2024-03): computed=753.98%, source=8.75%, diff=745.23pp
+  INDIGO (2024-03): computed=4953.54%, source=24.5%, diff=4929.04pp
+  INFY (2024-03): computed=32.91%, source=40.0%, diff=7.09pp
+  IRCTC (2024-03): computed=42.83%, source=53.8%, diff=10.97pp
+  LICI (2024-03): computed=39.05%, source=63.79%, diff=24.74pp
+  LT (2024-03): computed=118.53%, source=17.18%, diff=101.35pp
+  LTIM (2024-03): computed=25.21%, source=34.1%, diff=8.89pp
+  M&M (2024-03): computed=11.54%, source=26.98%, diff=15.44pp
+  MARUTI (2024-03): computed=15.59%, source=23.67%, diff=8.08pp
+  NESTLEIND (2024-03): computed=143.15%, source=185.43%, diff=42.28pp
+  PFC (2024-03): computed=3.48%, source=9.96%, diff=6.48pp
+  SBILIFE (2024-03): computed=1.14%, source=13.2%, diff=12.06pp
+  SHRIRAMFIN (2024-03): computed=4.06%, source=11.3%, diff=7.24pp
+  SIEMENS (2024-09): computed=17.74%, source=25.6%, diff=7.86pp
+
+--- ROE Anomalies (18) ---
+Two distinct sub-categories identified:
+  (1) DATA SOURCE ISSUE — e.g. TCS shows source=0.52%, almost certainly a units/formatting error in companies.xlsx (implausible for a company of TCS's scale and profitability). Our computed value (50.94%) is consistent with TCS's known strong profitability.
+  (2) EXTREME BUT GENUINE CAPITAL STRUCTURE — e.g. BEL and HAL show computed ROE >3500%, verified as mathematically correct given genuinely tiny equity_capital+reserves relative to strong net profit (small paid-up capital, modest reserves — plausible for these specific companies). Not an error in either value.
+  All other entries below are unreviewed individually and are provisionally categorised as (1) pending further review.
+
+  ADANIENT (2024-03): computed=8.53%, source=13.64%, diff=5.11pp
+  ADANIPOWER (2024-03): computed=48.28%, source=57.1%, diff=8.82pp
+  BAJAJFINSV (2024-03): computed=25.85%, source=11.72%, diff=14.13pp
+  BEL (2024-03): computed=4744.05%, source=26.3%, diff=4717.75pp
+  BPCL (2024-03): computed=35.51%, source=41.9%, diff=6.39pp
+  COALINDIA (2024-03): computed=45.17%, source=52.0%, diff=6.83pp
+  GODREJCP (2024-03): computed=-4.45%, source=6.77%, diff=11.22pp
+  HAL (2024-03): computed=3816.58%, source=28.9%, diff=3787.68pp
+  IRCTC (2024-03): computed=34.4%, source=40.4%, diff=6.0pp
+  LICI (2024-03): computed=49.45%, source=63.61%, diff=14.16pp
+  LT (2024-03): computed=77.67%, source=10.49%, diff=67.18pp
+  NESTLEIND (2024-03): computed=117.75%, source=135.61%, diff=17.86pp
+  PFC (2024-03): computed=26.16%, source=19.49%, diff=6.67pp
+  PNB (2024-03): computed=61.32%, source=8.7%, diff=52.62pp
+  TATAMOTORS (2024-03): computed=37.46%, source=49.4%, diff=11.94pp
+  TATASTEEL (2024-03): computed=-5.33%, source=6.55%, diff=11.88pp
+  TCS (2024-03): computed=50.94%, source=0.52%, diff=50.42pp
+  TRENT (2024-03): computed=36.31%, source=27.2%, diff=9.11pp

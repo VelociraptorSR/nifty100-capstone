@@ -28,3 +28,46 @@ def test_winsorize_and_score_handles_equal_p10_p90():
     series = pd.Series([5, 5, 5, 5, 5])
     scores = winsorize_and_score(series)
     assert (scores == 50).all()
+    
+
+from src.analytics.ratio_engine import cross_check_roce, cross_check_roe, get_latest_year_ratios
+
+
+def test_cross_check_roce_detects_anomaly():
+    ratios_df = pd.DataFrame({
+        "company_id": ["TEST1"],
+        "year": ["2024-03"],
+        "return_on_capital_employed_pct": [50.0],
+    })
+    companies_df = pd.DataFrame({
+        "id": ["TEST1"],
+        "roce_percentage": [10.0],
+    })
+    anomalies = cross_check_roce(ratios_df, companies_df, threshold=5.0)
+    assert len(anomalies) == 1
+    assert anomalies[0]["difference"] == 40.0
+
+
+def test_cross_check_roce_within_threshold_no_anomaly():
+    ratios_df = pd.DataFrame({
+        "company_id": ["TEST1"],
+        "year": ["2024-03"],
+        "return_on_capital_employed_pct": [12.0],
+    })
+    companies_df = pd.DataFrame({
+        "id": ["TEST1"],
+        "roce_percentage": [10.0],
+    })
+    anomalies = cross_check_roce(ratios_df, companies_df, threshold=5.0)
+    assert len(anomalies) == 0
+
+
+def test_get_latest_year_ratios_picks_max_year():
+    df = pd.DataFrame({
+        "company_id": ["TEST1", "TEST1", "TEST1"],
+        "year": ["2020-03", "2022-03", "2024-03"],
+        "return_on_equity_pct": [10.0, 15.0, 20.0],
+    })
+    latest = get_latest_year_ratios(df)
+    assert len(latest) == 1
+    assert latest.iloc[0]["year"] == "2024-03"
