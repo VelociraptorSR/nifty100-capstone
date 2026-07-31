@@ -35,7 +35,7 @@ def get_latest_year_per_company(df, year_col="year"):
 
 
 def build_screener_dataset(conn):
-    """Combine financial_ratios + market_cap + sectors + companies,
+    """Combine financial_ratios + market_cap + sectors + companies + P&L,
     reduced to each company's latest available year.
     """
     ratios = pd.read_sql("SELECT * FROM financial_ratios", conn)
@@ -44,10 +44,14 @@ def build_screener_dataset(conn):
     market_cap = pd.read_sql("SELECT * FROM market_cap", conn)
     market_cap = get_latest_year_per_company(market_cap)
 
+    pl = pd.read_sql("SELECT company_id, year, sales, net_profit FROM profitandloss WHERE year != 'TTM'", conn)
+    pl = get_latest_year_per_company(pl)
+
     sectors = pd.read_sql("SELECT company_id, broad_sector FROM sectors", conn)
     companies = pd.read_sql("SELECT id, company_name FROM companies", conn)
 
     merged = ratios.merge(market_cap.drop(columns=["year"]), on="company_id", how="left")
+    merged = merged.merge(pl.drop(columns=["year"]), on="company_id", how="left")
     merged = merged.merge(sectors, on="company_id", how="left")
     merged = merged.merge(companies, left_on="company_id", right_on="id", how="left")
 
@@ -82,6 +86,8 @@ def apply_filters(dataset, active_filters, config):
 
         if comparison == "min":
             passes = (values >= threshold) | skip_mask
+        elif comparison == "exact":
+            passes = (values == threshold) | skip_mask
         else:
             passes = (values <= threshold) | skip_mask
 
@@ -91,3 +97,55 @@ def apply_filters(dataset, active_filters, config):
             result = result.sort_values("composite_quality_score", ascending=False)
 
     return result
+
+def run_preset(dataset, preset_name, config):
+    """Run one of the 5 simple threshold-based presets."""
+    preset_filters = config["presets"][preset_name]
+    return apply_filters(dataset, preset_filters, config)
+
+
+def run_turnaround_watch(conn, dataset):
+    """Turnaround Watch: Revenue CAGR 3yr > 10%, FCF positive in latest
+    year, D/E declining year-over-year.
+    """
+    ratios_all_years = pd.read_sql("SELECT * FROM financial_ratios", conn)
+    ratios_all_years = ratios_all_years[ratios_all_years["year"].str.endswith("-03")]
+
+    results = []
+    for company_id in dataset["company_id"].unique():
+        company_history = ratios_all_years[ratios_all_years["company_id"] == company_id].sort_values("year")
+
+        if len(company_history) < 2:
+            continue
+
+        latest = company_history.iloc[-1]
+        previous = company_history.iloc[-2]
+
+        if pd.isna(latest["debt_to_equity"]) or pd.isna(previous["debt_to_equity"]):
+            continue
+        de_declining = latest["debt_to_equity"] < previous["debt_to_equity"]
+
+        fcf_positive = pd.notna(latest["free_cash_flow_cr"]) and latest["free_cash_flow_cr"] > 0
+
+        rev_cagr_3yr = compute_revenue_cagr_3yr_for_screener(conn, company_id, latest["year"])
+        cagr_ok = rev_cagr_3yr is not None and rev_cagr_3yr > 10
+
+        if de_declining and fcf_positive and cagr_ok:
+            results.append(company_id)
+
+    return dataset[dataset["company_id"].isin(results)]
+
+def compute_revenue_cagr_3yr_for_screener(conn, company_id, current_year):
+    """Compute 3yr Revenue CAGR on demand for Turnaround Watch.
+
+    Not stored in financial_ratios (Sprint 2 only stored 5yr CAGR),
+    so we compute it directly here using the existing CAGR engine.
+    """
+    from src.analytics.cagr import compute_company_cagr
+
+    pl = pd.read_sql(
+        "SELECT company_id, year, sales FROM profitandloss WHERE company_id = ? AND year != 'TTM'",
+        conn, params=(company_id,)
+    )
+    cagr, flag = compute_company_cagr(pl, "sales", current_year, 3)
+    return cagr
