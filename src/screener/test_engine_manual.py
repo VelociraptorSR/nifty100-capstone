@@ -11,34 +11,17 @@ DB_PATH = "data/nifty100.db"
 
 
 if __name__ == "__main__":
+    from src.screener.engine import export_screener_output
+
     conn = sqlite3.connect(DB_PATH)
-    dataset = build_screener_dataset(conn)
-
-    from src.screener.engine import compute_revenue_cagr_3yr_for_screener
-
-    ratios_all_years = pd.read_sql("SELECT * FROM financial_ratios", conn)
-    ratios_all_years = ratios_all_years[ratios_all_years["year"].str.endswith("-03")]
-
-    count_checked = 0
-    count_cagr_ok = 0
-    count_none = 0
-
-    for company_id in dataset["company_id"].unique():
-        company_history = ratios_all_years[ratios_all_years["company_id"] == company_id].sort_values("year")
-        if len(company_history) < 2:
-            continue
-        latest = company_history.iloc[-1]
-        count_checked += 1
-
-        cagr = compute_revenue_cagr_3yr_for_screener(conn, company_id, latest["year"])
-        if cagr is None:
-            count_none += 1
-        elif cagr > 10:
-            count_cagr_ok += 1
-
-    print("Companies checked:", count_checked)
-    print("3yr CAGR is None (insufficient data):", count_none)
-    print("3yr CAGR > 10%:", count_cagr_ok)
-
+    config = load_config()
+    path = export_screener_output(conn, config)
+    print("Saved:", path)
     conn.close()
-    
+
+    import openpyxl
+    wb = openpyxl.load_workbook(path)
+    print("Sheet names:", wb.sheetnames)
+    for sheet_name in wb.sheetnames:
+        ws = wb[sheet_name]
+        print(f"{sheet_name}: {ws.max_row - 1} rows, {ws.max_column} columns")

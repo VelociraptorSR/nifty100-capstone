@@ -149,3 +149,119 @@ def compute_revenue_cagr_3yr_for_screener(conn, company_id, current_year):
     )
     cagr, flag = compute_company_cagr(pl, "sales", current_year, 3)
     return cagr
+
+def compute_sector_relative_composite_score(dataset):
+    """Recompute composite_quality_score, but winsorise/normalise each
+    metric WITHIN each broad_sector rather than across the whole universe.
+
+    Uses the same weights as the Sprint 2 global score (Section 13):
+    35% Profitability (ROE 15 + ROCE 10 + NPM 10) + 30% Cash Quality
+    (FCF 15 + CFO/PAT 10 + FCF-positive-flag 5, simplified here to FCF
+    only since CFO/PAT isn't stored per-row) + 20% Growth (Revenue CAGR
+    10 + PAT CAGR 10) + 15% Leverage (D/E 10 + ICR 5).
+    """
+    from src.analytics.ratio_engine import winsorize_and_score
+
+    df = dataset.copy()
+    df["sector_composite_score"] = 0.0
+
+    for sector, group in df.groupby("broad_sector"):
+        idx = group.index
+
+        roe_score = winsorize_and_score(group["return_on_equity_pct"].fillna(group["return_on_equity_pct"].median()))
+        roce_score = winsorize_and_score(group["return_on_capital_employed_pct"].fillna(group["return_on_capital_employed_pct"].median()))
+        npm_score = winsorize_and_score(group["net_profit_margin_pct"].fillna(group["net_profit_margin_pct"].median()))
+
+        fcf_score = winsorize_and_score(group["free_cash_flow_cr"].fillna(group["free_cash_flow_cr"].median()))
+
+        rev_cagr_score = winsorize_and_score(group["revenue_cagr_5yr"].fillna(group["revenue_cagr_5yr"].median()))
+        pat_cagr_score = winsorize_and_score(group["pat_cagr_5yr"].fillna(group["pat_cagr_5yr"].median()))
+
+        de_inverted = -group["debt_to_equity"].fillna(group["debt_to_equity"].median())
+        de_score = winsorize_and_score(de_inverted)
+        icr_filled = group["interest_coverage"].fillna(group["interest_coverage"].median())
+        icr_score = winsorize_and_score(icr_filled)
+
+        profitability = 0.15 * roe_score + 0.10 * roce_score + 0.10 * npm_score
+        cash_quality = 0.30 * fcf_score
+        growth = 0.10 * rev_cagr_score + 0.10 * pat_cagr_score
+        leverage = 0.10 * de_score + 0.05 * icr_score
+
+        sector_score = profitability + cash_quality + growth + leverage
+        df.loc[idx, "sector_composite_score"] = sector_score.values
+
+    return df
+
+def export_screener_output(conn, config, output_path="output/screener_output.xlsx"):
+    """Generate screener_output.xlsx — one sheet per preset, colour-coded
+    cells (green = meets threshold, red = fails threshold).
+    """
+    from openpyxl import Workbook
+    from openpyxl.styles import PatternFill
+
+    dataset = build_screener_dataset(conn)
+    dataset = compute_sector_relative_composite_score(dataset)
+
+    green_fill = PatternFill(start_color="C6EFCE", end_color="C6EFCE", fill_type="solid")
+    red_fill = PatternFill(start_color="FFC7CE", end_color="FFC7CE", fill_type="solid")
+
+    display_cols = [
+        "company_id", "company_name", "broad_sector",
+        "return_on_equity_pct", "return_on_capital_employed_pct",
+        "net_profit_margin_pct", "operating_profit_margin_pct",
+        "debt_to_equity", "interest_coverage", "asset_turnover",
+        "free_cash_flow_cr", "revenue_cagr_5yr", "pat_cagr_5yr",
+        "eps_cagr_5yr", "pe_ratio", "pb_ratio", "dividend_yield_pct",
+        "dividend_payout_ratio_pct", "sales", "net_profit",
+        "composite_quality_score", "sector_composite_score",
+    ]
+
+    wb = Workbook()
+    wb.remove(wb.active)
+
+    for preset_name, preset_filters in config["presets"].items():
+        result = run_preset(dataset, preset_name, config)
+        result = result[[c for c in display_cols if c in result.columns]]
+
+        ws = wb.create_sheet(title=preset_name[:31])
+
+        ws.append(list(result.columns))
+
+        for _, row in result.iterrows():
+            ws.append(list(row))
+
+        preset_filter_cols = {
+            config["filters"][fname]["column"]: (config["filters"][fname]["comparison"], threshold)
+            for fname, threshold in preset_filters.items()
+            if fname in config["filters"]
+        }
+
+        header = list(result.columns)
+        for row_idx in range(2, ws.max_row + 1):
+            for col_idx, col_name in enumerate(header, start=1):
+                if col_name in preset_filter_cols:
+                    comparison, threshold = preset_filter_cols[col_name]
+                    cell = ws.cell(row=row_idx, column=col_idx)
+                    value = cell.value
+                    if value is None:
+                        continue
+                    if comparison == "min":
+                        meets = value >= threshold
+                    elif comparison == "exact":
+                        meets = value == threshold
+                    else:
+                        meets = value <= threshold
+                    cell.fill = green_fill if meets else red_fill
+
+    # Turnaround Watch: special case, not YAML-driven (needs year-over-year comparison)
+    turnaround_result = run_turnaround_watch(conn, dataset)
+    turnaround_result = turnaround_result[[c for c in display_cols if c in turnaround_result.columns]]
+    ws = wb.create_sheet(title="turnaround_watch")
+    ws.append(list(turnaround_result.columns))
+    for _, row in turnaround_result.iterrows():
+        ws.append(list(row))
+    # No per-cell colour-coding here since thresholds involve year-over-year
+    # comparison logic, not simple static column thresholds.
+
+    wb.save(output_path)
+    return output_path
