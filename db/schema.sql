@@ -167,3 +167,15 @@ CREATE TABLE IF NOT EXISTS peer_groups (
     is_benchmark INTEGER,
     FOREIGN KEY (company_id) REFERENCES companies(id)
 );
+
+-- Table 13: peer_percentiles (computed percentile ranks per company per metric)
+CREATE TABLE IF NOT EXISTS peer_percentiles (
+    id INTEGER PRIMARY KEY,
+    company_id TEXT NOT NULL,
+    peer_group_name TEXT NOT NULL,
+    metric TEXT NOT NULL,
+    value REAL,
+    percentile_rank REAL,
+    year TEXT NOT NULL,
+    FOREIGN KEY (company_id) REFERENCES companies(id)
+);
