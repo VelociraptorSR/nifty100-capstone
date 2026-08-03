@@ -11,17 +11,16 @@ DB_PATH = "data/nifty100.db"
 
 
 if __name__ == "__main__":
-    from src.screener.engine import export_screener_output
+    from src.screener.engine import build_screener_dataset, run_preset, load_config, compute_sector_relative_composite_score
 
     conn = sqlite3.connect(DB_PATH)
+    dataset = build_screener_dataset(conn)
     config = load_config()
-    path = export_screener_output(conn, config)
-    print("Saved:", path)
-    conn.close()
 
-    import openpyxl
-    wb = openpyxl.load_workbook(path)
-    print("Sheet names:", wb.sheetnames)
-    for sheet_name in wb.sheetnames:
-        ws = wb[sheet_name]
-        print(f"{sheet_name}: {ws.max_row - 1} rows, {ws.max_column} columns")
+    result = run_preset(dataset, "quality_compounder", config)
+    result = result.sort_values("composite_quality_score", ascending=False)
+
+    print("Quality Compounder - Top 5:")
+    print(result[["company_id", "return_on_equity_pct", "debt_to_equity", "free_cash_flow_cr", "revenue_cagr_5yr"]].head(5))
+
+    conn.close()
