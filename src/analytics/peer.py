@@ -84,3 +84,83 @@ def write_peer_percentiles(conn, percentiles_df):
     conn.execute("DELETE FROM peer_percentiles")
     conn.commit()
     percentiles_df.to_sql("peer_percentiles", conn, if_exists="append", index=False)
+    
+def export_peer_comparison(conn, output_path="output/peer_comparison.xlsx"):
+    """Generate peer_comparison.xlsx — 11 sheets, one per peer group,
+    with percentile colour-coding, benchmark highlighting, and a
+    median summary row.
+    """
+    from openpyxl import Workbook
+    from openpyxl.styles import PatternFill
+
+    green_fill = PatternFill(start_color="C6EFCE", end_color="C6EFCE", fill_type="solid")
+    yellow_fill = PatternFill(start_color="FFEB9C", end_color="FFEB9C", fill_type="solid")
+    red_fill = PatternFill(start_color="FFC7CE", end_color="FFC7CE", fill_type="solid")
+    gold_fill = PatternFill(start_color="FFD966", end_color="FFD966", fill_type="solid")
+
+    ratios = pd.read_sql("SELECT * FROM financial_ratios", conn)
+    ratios = get_latest_year_per_company(ratios)
+    companies = pd.read_sql("SELECT id, company_name FROM companies", conn)
+    peer_groups = pd.read_sql("SELECT peer_group_name, company_id, is_benchmark FROM peer_groups", conn)
+    percentiles = compute_peer_percentiles(conn)
+
+    wb = Workbook()
+    wb.remove(wb.active)
+
+    for group_name in peer_groups["peer_group_name"].unique():
+        members = peer_groups[peer_groups["peer_group_name"] == group_name]
+        group_ratios = members.merge(ratios, on="company_id", how="left")
+        group_ratios = group_ratios.merge(companies, left_on="company_id", right_on="id", how="left")
+
+        ws = wb.create_sheet(title=group_name[:31])
+
+        metric_cols = [m for m in METRICS if m in group_ratios.columns]
+        header = ["company_id", "company_name"] + metric_cols + [f"{m}_percentile" for m in metric_cols]
+        ws.append(header)
+
+        group_percentiles = percentiles[percentiles["peer_group_name"] == group_name]
+
+        for _, row in group_ratios.iterrows():
+            values = [row["company_id"], row["company_name"]]
+            values += [row.get(m) for m in metric_cols]
+
+            for m in metric_cols:
+                pct_row = group_percentiles[
+                    (group_percentiles["company_id"] == row["company_id"]) &
+                    (group_percentiles["metric"] == m)
+                ]
+                values.append(pct_row["percentile_rank"].iloc[0] if len(pct_row) > 0 else None)
+
+            ws.append(values)
+
+        n_metric_cols = len(metric_cols)
+        pct_col_start = 2 + n_metric_cols + 1
+
+        for row_idx in range(2, ws.max_row + 1):
+            for offset, m in enumerate(metric_cols):
+                col_idx = pct_col_start + offset
+                cell = ws.cell(row=row_idx, column=col_idx)
+                if cell.value is None:
+                    continue
+                if cell.value >= 0.75:
+                    cell.fill = green_fill
+                elif cell.value <= 0.25:
+                    cell.fill = red_fill
+                else:
+                    cell.fill = yellow_fill
+
+        for row_idx in range(2, ws.max_row + 1):
+            company_id = ws.cell(row=row_idx, column=1).value
+            is_bench = members[members["company_id"] == company_id]["is_benchmark"]
+            if len(is_bench) > 0 and is_bench.iloc[0]:
+                for col_idx in range(1, len(header) + 1):
+                    ws.cell(row=row_idx, column=col_idx).fill = gold_fill
+
+        median_row = ["MEDIAN", ""]
+        for m in metric_cols:
+            median_row.append(group_ratios[m].median())
+        median_row += [None] * n_metric_cols
+        ws.append(median_row)
+
+    wb.save(output_path)
+    return output_path
