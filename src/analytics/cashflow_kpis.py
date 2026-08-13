@@ -161,3 +161,144 @@ def generate_capital_allocation_csv(conn, output_path="output/capital_allocation
     result_df = pd.DataFrame(records)
     result_df.to_csv(output_path, index=False)
     return result_df
+
+def detect_distress_signal(cf_row):
+    """Distress Signal: CFO < 0 AND CFF > 0 in latest year
+    (raising cash from financing while operations burn cash)."""
+    cfo = cf_row["operating_activity"]
+    cff = cf_row["financing_activity"]
+    if pd.isna(cfo) or pd.isna(cff):
+        return False
+    return cfo < 0 and cff > 0
+
+
+def detect_deleveraging(cf_row, prev_borrowings, curr_borrowings):
+    """Deleveraging: CFF < 0 AND borrowings declining year-over-year
+    (actively paying down debt)."""
+    cff = cf_row["financing_activity"]
+    if pd.isna(cff) or pd.isna(prev_borrowings) or pd.isna(curr_borrowings):
+        return False
+    return cff < 0 and curr_borrowings < prev_borrowings
+
+def build_cashflow_intelligence(conn):
+    """Assemble the full cashflow_intelligence.xlsx dataset for all companies."""
+    pl = pd.read_sql("SELECT * FROM profitandloss WHERE year != 'TTM'", conn)
+    bs = pd.read_sql("SELECT * FROM balancesheet", conn)
+    cf = pd.read_sql("SELECT * FROM cashflow WHERE year != 'TTM'", conn)
+    sectors = pd.read_sql("SELECT company_id, broad_sector FROM sectors", conn)
+    companies = pd.read_sql("SELECT id, company_name FROM companies", conn)
+
+    merged = pd.merge(pl, bs, on=["company_id", "year"], suffixes=("_pl", "_bs"))
+    merged = pd.merge(merged, cf, on=["company_id", "year"], how="left")
+
+    records = []
+
+    for company_id in merged["company_id"].unique():
+        company_df = merged[merged["company_id"] == company_id].sort_values("year")
+        if company_df.empty:
+            continue
+
+        latest = company_df.iloc[-1]
+
+        cfo_quality_score, cfo_quality_label = compute_cfo_quality_score(company_df, latest["year"])
+        capex_intensity, capex_label = compute_capex_intensity(latest)
+        fcf_conversion = compute_fcf_conversion_rate(latest)
+
+        rev_cagr_5yr = None
+        from src.analytics.cagr import compute_company_cagr
+        pl_only = company_df[["year", "sales"]]
+        fcf_cagr_5yr, _ = compute_company_cagr(
+            company_df.assign(fcf_temp=company_df["operating_activity"] + company_df["investing_activity"]),
+            "fcf_temp", latest["year"], 5
+        )
+
+        distress = detect_distress_signal(latest)
+
+        prev_borrowings = company_df.iloc[-2]["borrowings"] if len(company_df) >= 2 else None
+        deleveraging = detect_deleveraging(latest, prev_borrowings, latest["borrowings"])
+
+        cfo_quality_score_final, _ = compute_cfo_quality_score(company_df, latest["year"])
+
+        records.append({
+            "company_id": company_id,
+            "cfo_quality_score": cfo_quality_score,
+            "cfo_quality_label": cfo_quality_label,
+            "capex_intensity_pct": capex_intensity,
+            "capex_label": capex_label,
+            "fcf_cagr_5yr": fcf_cagr_5yr,
+            "fcf_conversion_pct": fcf_conversion,
+            "distress_flag": distress,
+            "deleveraging_flag": deleveraging,
+            "latest_cfo": latest["operating_activity"],
+            "latest_cff": latest["financing_activity"],
+            "latest_net_profit": latest["net_profit"],
+        })
+
+    result_df = pd.DataFrame(records)
+    result_df = result_df.merge(sectors, on="company_id", how="left")
+    result_df = result_df.merge(companies, left_on="company_id", right_on="id", how="left")
+
+    capital_labels = []
+    for company_id in result_df["company_id"]:
+        company_df = merged[merged["company_id"] == company_id].sort_values("year")
+        latest = company_df.iloc[-1]
+        score_row = result_df[result_df["company_id"] == company_id].iloc[0]
+        _, _, _, label = classify_capital_allocation(latest, cfo_quality_score=score_row["cfo_quality_score"])
+        capital_labels.append(label)
+    result_df["capital_allocation_label"] = capital_labels
+    
+    all_companies = pd.read_sql("SELECT id, company_name FROM companies", conn)
+    missing_companies = set(all_companies["id"]) - set(result_df["company_id"])
+
+    if missing_companies:
+        sectors_lookup = pd.read_sql("SELECT company_id, broad_sector FROM sectors", conn)
+        missing_records = []
+        for company_id in missing_companies:
+            sector_row = sectors_lookup[sectors_lookup["company_id"] == company_id]
+            sector = sector_row["broad_sector"].iloc[0] if len(sector_row) > 0 else None
+            name_row = all_companies[all_companies["id"] == company_id]
+            name = name_row["company_name"].iloc[0] if len(name_row) > 0 else None
+
+            missing_records.append({
+                "company_id": company_id, "cfo_quality_score": None,
+                "cfo_quality_label": "Insufficient Data", "capex_intensity_pct": None,
+                "capex_label": "Insufficient Data", "fcf_cagr_5yr": None,
+                "fcf_conversion_pct": None, "distress_flag": False, "deleveraging_flag": False,
+                "latest_cfo": None, "latest_cff": None, "latest_net_profit": None,
+                "broad_sector": sector, "id": company_id, "company_name": name,
+                "capital_allocation_label": "Insufficient Data",
+            })
+        result_df = pd.concat([result_df, pd.DataFrame(missing_records)], ignore_index=True)
+
+
+    return result_df
+
+def export_cashflow_intelligence(result_df, output_path="output/cashflow_intelligence.xlsx"):
+    export_cols = [
+        "company_id", "company_name", "broad_sector", "cfo_quality_score", "cfo_quality_label",
+        "capex_intensity_pct", "capex_label", "fcf_cagr_5yr", "fcf_conversion_pct",
+        "distress_flag", "deleveraging_flag", "capital_allocation_label",
+    ]
+    export_cols = [c for c in export_cols if c in result_df.columns]
+    result_df[export_cols].to_excel(output_path, index=False)
+    return output_path
+
+
+def export_distress_alerts(result_df, output_path="output/distress_alerts.csv"):
+    distressed = result_df[result_df["distress_flag"] == True]
+    export_cols = ["company_id", "company_name", "latest_cfo", "latest_cff", "latest_net_profit"]
+    export_cols = [c for c in export_cols if c in distressed.columns]
+    distressed[export_cols].to_csv(output_path, index=False)
+    return output_path, len(distressed)
+
+def export_distress_alerts(result_df, output_path="output/distress_alerts.csv"):
+    distressed = result_df[result_df["distress_flag"] == True].copy()
+    distressed["note"] = distressed["broad_sector"].apply(
+        lambda s: "Caution: negative CFO/positive CFF can be structurally normal for banks/NBFCs "
+                  "due to loan disbursement patterns — review individually, not as automatic distress."
+        if s == "Financials" else "Standard distress pattern for non-financial company — recommend review."
+    )
+    export_cols = ["company_id", "company_name", "broad_sector", "latest_cfo", "latest_cff", "latest_net_profit", "note"]
+    export_cols = [c for c in export_cols if c in distressed.columns]
+    distressed[export_cols].to_csv(output_path, index=False)
+    return output_path, len(distressed)

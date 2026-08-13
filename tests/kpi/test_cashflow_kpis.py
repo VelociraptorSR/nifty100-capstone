@@ -80,3 +80,4 @@ def test_classify_shareholder_returns_requires_high_quality():
     row = pd.Series({"operating_activity": 100, "investing_activity": -50, "financing_activity": -30})
     cfo_sign, cfi_sign, cff_sign, label = classify_capital_allocation(row, cfo_quality_score=1.2)
     assert label == "Shareholder Returns"
+    
