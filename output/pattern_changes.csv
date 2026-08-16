@@ -1,0 +1,39 @@
+company_id,from_year,from_pattern,to_year,to_pattern
+ADANIENSOL,2023-03,Mixed,2024-03,Shareholder Returns
+ADANIENT,2023-03,Shareholder Returns,2024-03,Mixed
+ADANIGREEN,2023-03,Reinvestor,2024-03,Mixed
+AMBUJACEM,2021-12,Shareholder Returns,2024-03,Mixed
+AXISBANK,2023-03,Mixed,2024-03,Growth Funded by Debt
+BAJAJ-AUTO,2023-03,Liquidating Assets,2024-03,Reinvestor
+BANKBARODA,2023-03,Pre-Revenue,2024-03,Growth Funded by Debt
+BEL,2023-03,Liquidating Assets,2024-03,Shareholder Returns
+BRITANNIA,2023-03,Shareholder Returns,2024-03,Liquidating Assets
+CANBK,2023-03,Growth Funded by Debt,2024-03,Shareholder Returns
+DLF,2023-03,Shareholder Returns,2024-03,Mixed
+GAIL,2023-03,Mixed,2024-03,Reinvestor
+GODREJCP,2023-03,Shareholder Returns,2024-03,Mixed
+HAVELLS,2023-03,Liquidating Assets,2024-03,Shareholder Returns
+HDFCBANK,2023-03,Mixed,2024-03,Liquidating Assets
+HDFCLIFE,2023-03,Mixed,2024-03,Shareholder Returns
+ICICIBANK,2023-03,Growth Funded by Debt,2024-03,Mixed
+ICICIPRULI,2023-03,Shareholder Returns,2024-03,Mixed
+INDUSINDBK,2023-03,Growth Funded by Debt,2024-03,Pre-Revenue
+IRCTC,2023-03,Shareholder Returns,2024-03,Reinvestor
+IRFC,2023-03,Distress Signal,2024-03,Reinvestor
+ITC,2023-03,Reinvestor,2024-03,Liquidating Assets
+JINDALSTEL,2023-03,Reinvestor,2024-03,Mixed
+JIOFIN,2023-03,Reinvestor,2024-03,Mixed
+KOTAKBANK,2023-03,Growth Funded by Debt,2024-03,Mixed
+LODHA,2023-03,Liquidating Assets,2024-03,Mixed
+LT,2023-03,Shareholder Returns,2024-03,Liquidating Assets
+LTIM,2023-03,Reinvestor,2024-03,Shareholder Returns
+MOTHERSON,2023-03,Shareholder Returns,2024-03,Mixed
+PNB,2023-03,Mixed,2024-03,Growth Funded by Debt
+RELIANCE,2023-03,Mixed,2024-03,Shareholder Returns
+SBIN,2023-03,Growth Funded by Debt,2024-03,Shareholder Returns
+SHRIRAMFIN,2023-03,Distress Signal,2024-03,Growth Funded by Debt
+SUNPHARMA,2023-03,Mixed,2024-03,Shareholder Returns
+TATACONSUM,2023-03,Shareholder Returns,2024-03,Mixed
+TATAPOWER,2023-03,Mixed,2024-03,Shareholder Returns
+TITAN,2023-03,Mixed,2024-03,Reinvestor
+TORNTPHARM,2023-03,Mixed,2024-03,Shareholder Returns

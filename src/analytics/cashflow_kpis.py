@@ -302,3 +302,39 @@ def export_distress_alerts(result_df, output_path="output/distress_alerts.csv"):
     export_cols = [c for c in export_cols if c in distressed.columns]
     distressed[export_cols].to_csv(output_path, index=False)
     return output_path, len(distressed)
+
+def generate_pattern_distribution(capital_allocation_df):
+    """Count of companies in each capital allocation pattern, latest year only."""
+    df = capital_allocation_df.copy()
+    df["year_sortable"] = df["year"].astype(str).str.replace("-", "").astype(int)
+    idx = df.groupby("company_id")["year_sortable"].idxmax()
+    latest = df.loc[idx]
+
+    distribution = latest["pattern_label"].value_counts().reset_index()
+    distribution.columns = ["pattern_label", "company_count"]
+    return distribution, latest
+
+def detect_pattern_changes(capital_allocation_df):
+    """Identify companies whose capital allocation pattern changed
+    between their two most recent available years.
+    """
+    df = capital_allocation_df.copy()
+    df["year_sortable"] = df["year"].astype(str).str.replace("-", "").astype(int)
+    df = df.sort_values(["company_id", "year_sortable"])
+
+    changes = []
+    for company_id, group in df.groupby("company_id"):
+        if len(group) < 2:
+            continue
+        previous = group.iloc[-2]
+        latest = group.iloc[-1]
+        if previous["pattern_label"] != latest["pattern_label"]:
+            changes.append({
+                "company_id": company_id,
+                "from_year": previous["year"],
+                "from_pattern": previous["pattern_label"],
+                "to_year": latest["year"],
+                "to_pattern": latest["pattern_label"],
+            })
+
+    return pd.DataFrame(changes, columns=["company_id", "from_year", "from_pattern", "to_year", "to_pattern"])
